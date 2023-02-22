@@ -23,3 +23,4 @@ export const textValidation = "#F08F21";
 
 export const textError = "#FF3333";
 export const textSuccess = "#40BF7F";
+export const drawerItemsBackgroundColor = 'rgba(77, 85, 159, 0.1)'
