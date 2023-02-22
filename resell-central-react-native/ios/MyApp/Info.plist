@@ -53,14 +53,14 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Proxima Nova Alt Bold.otf</string>
-		<string>Proxima Nova Alt Light.otf</string>
-		<string>Proxima Nova Alt Thin.otf</string>
-		<string>Proxima Nova Black.otf</string>
-		<string>Proxima Nova Bold.otf</string>
-		<string>Proxima Nova Extrabold.otf</string>
-		<string>Proxima Nova Thin.otf</string>
 		<string>ProximaNova-Regular.otf</string>
+		<string>ProximaNova-Black.otf</string>
+		<string>ProximaNova-Bold.otf</string>
+		<string>ProximaNova-Extrabold.otf</string>
+		<string>ProximaNova-Thin.otf</string>
+		<string>ProximaNovaAlt-Bold.otf</string>
+		<string>ProximaNovaAlt-Light.otf</string>
+		<string>ProximaNovaAlt-Thin.otf</string>
 	</array>
 </dict>
 </plist>

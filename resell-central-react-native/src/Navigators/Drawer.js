@@ -12,7 +12,7 @@ import ManageReturns from '@/screens/ManageReturns/ManageReturns'
 import Accounting from '@/screens/Accounting/Accounting'
 import Settings from '@/screens/Settings/Settings'
 import CustomDrawer from '@/Components/CustomDrawer/CustomDrawer'
-
+import {Image} from 'react-native'
 const Drawer = createDrawerNavigator()
 
 const DrawerNavigation = () => {
@@ -25,11 +25,18 @@ const DrawerNavigation = () => {
       drawerStyle={{ width: 280 }}
       drawerContent={props => <CustomDrawer {...props} /> }
     >
-      {/* <Drawer.Screen
-        options={{ headerShown: false }}
+      <Drawer.Screen
+      
+        options={{ headerShown: false, 
+         drawerIcon: ({color}) => (
+        <Image source={require('../Assets/Images/dashboardIcon.png')}
+        style={{height: 20, width: 20, tintColor: color }}
+         />
+        )
+        }}
         name="Dashboard"
         component={ApplicationNavigator}
-      /> */}
+      />
       <Drawer.Screen
         options={{ headerShown: false }}
         name="Category"

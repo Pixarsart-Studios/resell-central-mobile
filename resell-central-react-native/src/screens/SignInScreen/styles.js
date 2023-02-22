@@ -2,6 +2,7 @@ import { bgBlack, bgWhite, strokeBlue, strokeGray, strokeWhite, textDarkGrey, te
 import { proximaNovaAltBold, proximaNovaRegular } from '@/Constants/Fonts'
 import { StyleSheet } from 'react-native'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 export const styles = StyleSheet.create({
   container: {
@@ -122,7 +123,7 @@ buttonContainer:{},
   },
   signInWithText: {
     fontWeight: '400',
-    fontSize: 12,
+    fontSize: RFPercentage(12),
     lineHeight: 16,
   },
   signInOptionContainer: {
