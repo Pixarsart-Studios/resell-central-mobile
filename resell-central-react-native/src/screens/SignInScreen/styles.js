@@ -1,7 +1,7 @@
 import { bgBlack, bgWhite, strokeBlue, strokeGray, strokeWhite, textDarkGrey, textError } from '@/Constants/Colors'
 import { proximaNovaAltBold, proximaNovaRegular } from '@/Constants/Fonts'
 import { StyleSheet } from 'react-native'
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP} from 'react-native-responsive-screen';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 export const styles = StyleSheet.create({
@@ -60,8 +60,8 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     borderColor: strokeGray,
-    // borderEndColor: 'red'
-
+    height: 50,
+    paddingLeft: 10
   },
   heading: {
     paddingLeft: 24
@@ -123,25 +123,23 @@ buttonContainer:{},
   },
   signInWithText: {
     fontWeight: '400',
-    fontSize: RFPercentage(12),
+    fontSize: 12,
     lineHeight: 16,
   },
   signInOptionContainer: {
     flexDirection: 'row',
-    // paddingTop: 40,
-    
   },
   fbLogo: {
     marginRight: 14,
     height: 40,
     width: 40,
-    // marginTop: 16
-
   },
   googleLogo: {
     marginLeft: 14,
     height: 40,
     width: 40,
-    // marginTop: 16, 
   },
+  bottomLogoView : {
+    paddingTop: hp('9%')
+  }
 })

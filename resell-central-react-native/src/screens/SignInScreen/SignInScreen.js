@@ -48,7 +48,6 @@ const SignInScreen = ({ props, navigation }) => {
         </View>
         <View style={styles.notAccountContainer}>
           <Text style={styles.noAccountText}>Don't have account.</Text>
-
           <Text
           onPress={()=> navigation.navigate('SignUp')}
            style={styles.signUpText}>Sign UP</Text>
@@ -66,8 +65,10 @@ const SignInScreen = ({ props, navigation }) => {
             />
           </View>
         </View>
+        <View style={styles.bottomLogoView}>
         <Image 
        source={require('../../Assets/Images/Ellipse.png')} />
+       </View>
       </View>
     </View>
   )

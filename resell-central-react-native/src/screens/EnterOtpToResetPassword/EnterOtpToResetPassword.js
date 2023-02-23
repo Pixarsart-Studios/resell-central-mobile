@@ -74,9 +74,7 @@ const EnterOtpToResetPassword = ({navigation}) => {
         <Text style={styles.signInWithText}>RESEND CODE</Text>
        
       </View>
-      <View style={{
-        paddingTop: 72
-      }}>
+      <View style={styles.bottomLogo}>
 
       <Image 
      source={require('../../Assets/Images/Ellipse.png')} />

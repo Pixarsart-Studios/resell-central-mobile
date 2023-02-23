@@ -43,9 +43,7 @@ const ForgotPasswordScreen = ({ props, navigation }) => {
           <Text
            style={styles.signUpText}>Sign in</Text>
         </View>
-        <View style={{
-        paddingTop: 145
-      }}>
+        <View style={styles.bottomLogo}>
         <Image 
        source={require('../../Assets/Images/Ellipse.png')} />
       </View>
