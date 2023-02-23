@@ -1,4 +1,4 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, SafeAreaView } from 'react-native'
 import React from 'react'
 import { Header } from '@react-navigation/stack'
 import MainHeader from '@/Components/MainHeader/MainHeader'
@@ -23,7 +23,7 @@ import {
 
 const Dashboard = () => {
   return (
-    <View>
+    <SafeAreaView>
       <MainHeader
         heading={'Resell Central Seller'}
         icon={
@@ -452,7 +452,7 @@ const Dashboard = () => {
           </View>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   )
 }
 

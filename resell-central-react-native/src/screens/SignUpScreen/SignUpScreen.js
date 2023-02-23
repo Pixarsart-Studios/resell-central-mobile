@@ -7,12 +7,9 @@ import AppFormField from '../../Components/Form/AppFormField'
 import AppFormSubmitButton from '@/Components/Form/AppFormSubmitButton'
 import Input from '@/Components/Input/Input'
 import { styles } from './styles'
-import Button from '@/Components/Button/Button'
 import CheckBox from '@react-native-community/checkbox'
 import {useFormikContext} from 'formik';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import MainHeader from '@/Components/MainHeader/MainHeader'
-
 
 export const validationSchema = Yup.object({}).shape({
   firstName: Yup.string().required('FirstName is required').label('FirstName'),
@@ -124,7 +121,7 @@ const SignUpScreen = ({navigation}) => {
             />
           </View>
 
-          <View style={{ paddingTop: hp('35%') }}>
+          <View style={{ paddingTop: hp('20%') }}>
             <View style={styles.notAccountContainer}>
               <CheckBox
                 disabled={false}
@@ -137,7 +134,6 @@ const SignUpScreen = ({navigation}) => {
               <Text style={styles.tACPPText}>Privacy Policy</Text>
             </View>
             <AppFormSubmitButton title="SIGN UP"  />
-            {/* <Button title={'SIGN UP'} /> */}
           </View>
         </AppForm>
         <View style={styles.notAccountContainer}>

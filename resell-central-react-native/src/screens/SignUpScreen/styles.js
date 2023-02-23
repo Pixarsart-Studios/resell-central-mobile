@@ -54,12 +54,14 @@ export const styles = StyleSheet.create({
     height: hp('17%'),
     paddingLeft: 24,
     paddingRight: 24,
+    
   },
   input: {
     borderWidth: 1,
     borderRadius: 5,
     borderColor: strokeGray,
-
+    height: 50,
+    paddingLeft: 10
   },
   heading: {
     paddingLeft: 24

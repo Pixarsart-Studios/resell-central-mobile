@@ -75,9 +75,7 @@ const EnterOtpScreen = ({navigation}) => {
         <Text style={styles.signInWithText}>RESEND CODE</Text>
        
       </View>
-      <View style={{
-        paddingTop: 42
-      }}>
+      <View style={styles.bottomLogo}>
 
       <Image 
      source={require('../../Assets/Images/Ellipse.png')} />

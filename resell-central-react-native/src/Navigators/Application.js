@@ -22,7 +22,7 @@ const ApplicationNavigator = () => {
   return (
     <SafeAreaView style={[Layout.fill, { backgroundColor: colors.card }]}>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {/* <Stack.Screen name="SignInScreen" component={SignInScreen} />
+         <Stack.Screen name="SignInScreen" component={SignInScreen} />
         <Stack.Screen name="SignUp" component={SignUpScreen} />
         <Stack.Screen name="OtpScreen" component={EnterOtpScreen} />
         <Stack.Screen
@@ -38,7 +38,7 @@ const ApplicationNavigator = () => {
           name="EnterOtpToResetPassword"
           component={EnterOtpToResetPassword}
         />
-        <Stack.Screen name="StoreInformation" component={StoreInformation} /> */}
+        <Stack.Screen name="StoreInformation" component={StoreInformation} />
         {/* <Stack.Screen name="DashboardScreen" component={Dashboard} /> */}
         <Stack.Screen name="MainNavigator" component={MainNavigator} />
       </Stack.Navigator>

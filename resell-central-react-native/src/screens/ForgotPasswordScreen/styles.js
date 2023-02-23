@@ -51,15 +51,16 @@ export const styles = StyleSheet.create({
     lineHeight: 18.2,
   },
   inputContainer: {
-    height: hp('17%'),
+    // height: hp('17%'),
     paddingLeft: 24,
     paddingRight: 24,
+    backgroundColor: 'red'
   },
   input: {
     borderWidth: 1,
     borderRadius: 5,
     borderColor: strokeGray,
-    // borderEndColor: 'red'
+    height: 50
 
   },
   heading: {
@@ -83,7 +84,9 @@ descText: {
     color: textDarkGrey,
 
 },
-buttonContainer:{},
+buttonContainer:{
+  paddingTop: hp('8%')
+},
   forgotTextContainer: {
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
@@ -143,4 +146,7 @@ buttonContainer:{},
     width: 40,
     // marginTop: 16, 
   },
+  bottomLogo: {
+    paddingTop: hp('44%')
+  }
 })

@@ -165,4 +165,7 @@ buttonContainer:{},
   focusCell: {
     borderColor: '#000',
   },
+   bottomLogo: {
+    paddingTop: hp('26%')
+  }
 })

@@ -42,9 +42,7 @@ const AddMobileNumberScreen = ({navigation}) => {
         onPress={()=> navigation.navigate('AgainOtpScreen')}
          />
         </View>
-        <View style={{
-        paddingTop: 92
-      }}>
+        <View style={styles.bottomLogoView}>
 
         <Image 
         

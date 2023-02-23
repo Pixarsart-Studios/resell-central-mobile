@@ -33,7 +33,6 @@ const DrawerNavigation = () => {
       drawerContent={props => <CustomDrawer {...props}  /> }
     >
       <Drawer.Screen
-        
         options={{ headerShown: false, 
          drawerIcon: ({color}) => (
         <Image source={require('../Assets/Images/dashboardIcon.png')}

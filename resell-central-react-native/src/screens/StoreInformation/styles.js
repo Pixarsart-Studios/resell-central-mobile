@@ -60,7 +60,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     borderColor: strokeGray,
-    // borderEndColor: 'red'
+    height: 50
 
   },
   heading: {

@@ -165,4 +165,7 @@ justifyContent: 'space-around'
   focusCell: {
     borderColor: '#000',
   },
+  bottomLogo: {
+    paddingTop: hp('28%')
+  }
 })

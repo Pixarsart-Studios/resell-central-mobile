@@ -39,11 +39,11 @@ export const styles = StyleSheet.create({
 passwordLabel: {
     backgroundColor: strokeWhite,
     alignSelf: 'flex-start',
-    marginStart: 163,
+    marginStart: 183,
     zIndex: 1,
     elevation: 1,
     shadowColor: bgWhite,
-    top: '4.8%',
+    top: '3.8%',
     // backgroundColor: 'red'
   },
   passwordLabelText: {
@@ -53,11 +53,10 @@ passwordLabel: {
   },
   inputContainer: {
     height: hp('17%'),
-    paddingRight: 84,
+    paddingRight: 120,
     paddingLeft: 24,
     flexDirection: 'row',
     paddingTop: 24,
-    // justifyContent: 'flex-start'
 },
 countryCodeInput: {
     borderWidth: 1,
@@ -65,11 +64,11 @@ countryCodeInput: {
     borderColor: strokeGray,
     // borderEndColor: 'red'
     width: wp('24%'),
-    height: hp('8%'),
+    height: hp('7%'),
   },
   numberInput: {
-    width: wp('51%'),
-    height: hp('8%'),
+    width: wp('56%'),
+    height: hp('7%'),
     borderWidth: 1,
     borderRadius: 5,
     borderColor: strokeGray,
@@ -156,4 +155,7 @@ buttonContainer:{},
     width: 40,
     // marginTop: 16, 
   },
+  bottomLogoView: {
+    paddingTop: hp('27%')
+  }
 })

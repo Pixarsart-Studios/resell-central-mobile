@@ -6,7 +6,6 @@ import { store, persistor } from '@/Store'
 import './Translations'
 import DrawerNavigation from './Navigators/Drawer'
 import {NavigationContainer} from '@react-navigation/native';
-
 const App = () => (
   <Provider store={store}>
     <NavigationContainer>
