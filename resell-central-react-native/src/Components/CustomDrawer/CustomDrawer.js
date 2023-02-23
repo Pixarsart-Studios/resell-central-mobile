@@ -7,7 +7,6 @@ import {
 import { proximaNovaAltBold, proximaNovaAltLight } from '@/Constants/Fonts'
 import { mainBlue, textBlack, textDarkGrey } from '@/Constants/Colors'
 
-
 const CustomDrawer = props => {
   return (
     <View style={styles.container}>
