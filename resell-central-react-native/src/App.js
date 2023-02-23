@@ -6,11 +6,13 @@ import { store, persistor } from '@/Store'
 import './Translations'
 import DrawerNavigation from './Navigators/Drawer'
 import {NavigationContainer} from '@react-navigation/native';
+import CategoryItems from './screens/CategoryItems/CategoryItems'
 const App = () => (
   <Provider store={store}>
     <NavigationContainer>
     <PersistGate loading={null} persistor={persistor}>
-      <DrawerNavigation />
+      {/* <DrawerNavigation /> */}
+      <CategoryItems />
     </PersistGate>
     </NavigationContainer>
   </Provider>
