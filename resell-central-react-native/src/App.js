@@ -8,13 +8,14 @@ import DrawerNavigation from './Navigators/Drawer'
 import {NavigationContainer} from '@react-navigation/native';
 import Inventory from './screens/Inventory/Inventory'
 import ProductDetails from './screens/ProductDetails/ProductDetails'
+import InventoryAlerts from './screens/InventoryAlerts/InventoryAlerts'
 
 const App = () => (
   <Provider store={store}>
     <NavigationContainer>
     <PersistGate loading={null} persistor={persistor}>
       {/* <DrawerNavigation /> */}
-      <ProductDetails />
+      <InventoryAlerts />
     </PersistGate>
     </NavigationContainer>
   </Provider>
