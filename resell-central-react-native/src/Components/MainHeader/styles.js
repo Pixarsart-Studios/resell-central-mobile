@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingLeft: 20,
     paddingRight: 20,
-    backgroundColor: strokeWhite
+    backgroundColor: strokeWhite,
   },
   backIconStyle: {
     width: wp('35%'),
