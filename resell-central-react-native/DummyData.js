@@ -66,3 +66,30 @@ export const InventoryAlertsYesterayData = [
         date: 'Jan 23, 2023 | 8:34am',
     },
 ]
+
+export const ManageOrdersData = [
+    {
+        id: '#6626531546',
+        name: 'Apple Juiced',
+        quantity: 'Qty: 04',
+        detail: 'Order on Jan 23, 2023',
+        price: '542.25',
+        status: 'Shipped'
+    },
+    {
+        id: '#6626531546',
+        name: 'Apple Juiced',
+        quantity: 'Qty: 04',
+        detail: 'Order on Jan 23, 2023',
+        price: '542.25',
+        status: 'Pending'
+    },
+    {
+        id: '#6626531546',
+        name: 'Apple Juiced',
+        quantity: 'Qty: 04',
+        detail: 'Order on Jan 23, 2023',
+        price: '542.25',
+        status: 'Pednding'
+    },
+]
