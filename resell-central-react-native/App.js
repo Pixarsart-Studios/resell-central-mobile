@@ -3,8 +3,8 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 import { store, persistor } from '@/Store'
-import './Translations'
-import DrawerNavigation from './Navigators/Drawer'
+import './src/Translations'
+import DrawerNavigation from './src/Navigators/Drawer'
 import {NavigationContainer} from '@react-navigation/native';
 
 const App = () => (
