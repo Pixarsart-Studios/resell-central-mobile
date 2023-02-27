@@ -1,4 +1,4 @@
-import { bgWhite, buttonColor } from "@/Constants/Colors";
+import { bgWhite, buttonColor, primaryButton } from "@/Constants/Colors";
 import { StyleSheet } from "react-native";
 
 export const styles= StyleSheet.create({
@@ -14,7 +14,7 @@ export const styles= StyleSheet.create({
      borderRadius: 5,
      justifyContent: 'center',
      alignItems: 'center',
-     backgroundColor: buttonColor
+     backgroundColor: primaryButton
  
    },
    title: {
