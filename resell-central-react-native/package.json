@@ -33,6 +33,7 @@
     "react-native-confirmation-code-field": "^7.3.1",
     "react-native-flipper": "^0.156.0",
     "react-native-gesture-handler": "^2.9.0",
+    "react-native-localization": "^2.3.1",
     "react-native-reanimated": "^2.14.4",
     "react-native-responsive-fontsize": "^0.5.1",
     "react-native-responsive-screen": "^1.4.2",
