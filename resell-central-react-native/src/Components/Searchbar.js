@@ -7,7 +7,7 @@ const SearchBar = ({clicked, searchPhrase, setSearchPhrase, setCLicked}) => {
   return (
     <View style={styles.container}>
       <View style={styles.searchBar__unclicked}>
-        <Image style={{height: 30, width: 30, position: 'absolute', top: 6, left: 12 }} 
+        <Image style={{height: 20, width: 20, position: 'absolute', top: 12, left: 12 }} 
         source={require('../Assets/Images/searchIcon.png')} />
         <TextInput style={styles.input}
           placeholder="Search"
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   input: {
     fontSize: 14,
-    width: "95%",
+    width: "98%",
     borderWidth: 1,
     height: 45,
     borderColor: strokeGray,
