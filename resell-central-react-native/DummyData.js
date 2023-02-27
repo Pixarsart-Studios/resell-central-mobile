@@ -38,5 +38,31 @@ export const DummyData = [
         vendor: 'Vendor: Juice Corner',
         type: 'Type: Configurable',
         status: 'Low in Stock'
-    }
+    },
+]
+
+export const InventoryAlertsTodayData = [
+    {
+        title: 'Apple Juiced is low in stock',
+        date: 'Jan 23, 2023 | 8:34am',
+    },
+    {
+        title: 'Apple Juiced is low in stock',
+        date: 'Jan 23, 2023 | 8:34am',
+    },
+    {
+        title: 'Apple Juiced is low in stock',
+        date: 'Jan 23, 2023 | 8:34am',
+    },
+]
+
+export const InventoryAlertsYesterayData = [
+    {
+        title: 'Apple Juiced is low in stock',
+        date: 'Jan 23, 2023 | 8:34am',
+    },
+    {
+        title: 'Apple Juiced is low in stock',
+        date: 'Jan 23, 2023 | 8:34am',
+    },
 ]
