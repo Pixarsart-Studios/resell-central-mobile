@@ -38,7 +38,7 @@ export const DummyData = [
         vendor: 'Vendor: Juice Corner',
         type: 'Type: Configurable',
         status: 'Low in Stock'
-    },
+    }
 ]
 
 export const InventoryAlertsTodayData = [
@@ -53,7 +53,7 @@ export const InventoryAlertsTodayData = [
     {
         title: 'Apple Juiced is low in stock',
         date: 'Jan 23, 2023 | 8:34am',
-    },
+    }
 ]
 
 export const InventoryAlertsYesterayData = [
@@ -64,7 +64,7 @@ export const InventoryAlertsYesterayData = [
     {
         title: 'Apple Juiced is low in stock',
         date: 'Jan 23, 2023 | 8:34am',
-    },
+    }
 ]
 
 export const ManageReturnsData = [
@@ -99,5 +99,32 @@ export const ManageReturnsData = [
         detail: 'Order on: Jan 23, 2023',
         quantity: 'Qty: 04',
         status: 'Unresolved'
+    }
+]
+
+export const ManageOrdersData = [
+    {
+        id: '#6626531546',
+        name: 'Apple Juiced',
+        quantity: 'Qty: 04',
+        detail: 'Order on Jan 23, 2023',
+        price: '542.25',
+        status: 'Shipped'
     },
+    {
+        id: '#6626531546',
+        name: 'Apple Juiced',
+        quantity: 'Qty: 04',
+        detail: 'Order on Jan 23, 2023',
+        price: '542.25',
+        status: 'Pending'
+    },
+    {
+        id: '#6626531546',
+        name: 'Apple Juiced',
+        quantity: 'Qty: 04',
+        detail: 'Order on Jan 23, 2023',
+        price: '542.25',
+        status: 'Pednding'
+    }
 ]
