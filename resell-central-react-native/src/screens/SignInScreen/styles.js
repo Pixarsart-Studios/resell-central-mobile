@@ -61,7 +61,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     borderColor: strokeGray,
-    height: '75%',
+    height: '93%',
   },
   heading: {
     paddingLeft: 24
@@ -84,7 +84,9 @@ descText: {
     color: textDarkGrey,
 
 },
-buttonContainer:{},
+buttonContainer:{
+  paddingTop: 10,
+},
   forgotTextContainer: {
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
@@ -143,6 +145,6 @@ buttonContainer:{},
     marginTop: '3.5%'
   },
   bottomLogoView : {
-    paddingTop: hp('6.5%'),
+    paddingTop: hp('5.5%'),
   }
 })

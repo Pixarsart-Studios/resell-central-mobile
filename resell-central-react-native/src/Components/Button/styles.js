@@ -5,8 +5,6 @@ export const styles= StyleSheet.create({
     buttonContainer: {
      paddingLeft: 24,
     //  paddingTop: 24
-  paddingTop: 10,
-
     },
      button: {
      width: '93%',

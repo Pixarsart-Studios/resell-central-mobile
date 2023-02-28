@@ -1,14 +1,19 @@
 import { View, Text, TextInput, StyleSheet, Image, StatusBar } from 'react-native'
-import React from 'react'
+import React, {useContext} from 'react'
 import Input from '@/Components/Input/Input'
 import Button from '@/Components/Button/Button'
 import { styles } from './styles'
+import MainHeader from '@/Components/MainHeader/MainHeader'
+import AuthContext from "@/Config/AuthContext";
 
 const AddMobileNumberScreen = ({navigation}) => {
+  const { myState } = useContext(AuthContext);
+  const { language } = myState;
   return (
     <View style={styles.container}>
       <StatusBar 
       backgroundColor={'#FFFFFF'}/>
+      <MainHeader back={language?.back} />
       <View style={styles.childContainer}>
         <View style={styles.logoContainer}>
           <Image
@@ -17,28 +22,25 @@ const AddMobileNumberScreen = ({navigation}) => {
           source={require('../../Assets/Images/Frame.png')} />
         </View>
         <View style={styles.heading}>
-          <Text style={styles.headingText}>Add mobile number</Text>
+          <Text style={styles.headingText}>{language?.addMobileNumber}</Text>
         </View>
         <View style={styles.descContainer}>
           <Text style={styles.descText}>
-          To enhance your account security, add and verify your mobile number.
+          {language?.toEnhanceYourAccountSecurityAddAndVerifyYourMobileNumber}
           </Text>
         </View>
-        <View style={styles.passwordLabel}>
-          <Text style={styles.passwordLabelText}>Contact No</Text>
+        <View style={styles.contactLabel}>
+          <Text style={styles.contactLabelText}>Contact No.</Text>
         </View>
-        {/* <View style={styles.labelContainer}>
-          <Text style={styles.emailLabel}>Email</Text>
-        </View> */}
         <View style={styles.inputContainer}>
           <Input style={styles.countryCodeInput} />
           <Input style={styles.numberInput} />
         </View>
-        <View style={styles.forgotTextContainer}>
-          <Text style={styles.forgotText}>By enrolling a mobile phone number, you consent to receive automated security notifications via text messages from Resell Central.</Text>
+        <View style={styles.textContainer}>
+          <Text style={styles.text}>{language?.byEnrollingAMobilePhoneNumberYouConsentToReceiveAutomatedSecurityNotificationsViaTextMessagesFromResellCentral}</Text>
         </View>
         <View style={styles.buttonContainer}>
-        <Button title={'ADD MOBILE NUMBER'}
+        <Button title={language?.ADDMOBILENUMBER}
         onPress={()=> navigation.navigate('AgainOtpScreen')}
          />
         </View>

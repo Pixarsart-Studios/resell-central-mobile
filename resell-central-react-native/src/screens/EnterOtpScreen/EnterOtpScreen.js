@@ -1,6 +1,5 @@
-import { View, Text, TextInput, StyleSheet, Image, StatusBar } from 'react-native'
-import React, {useState} from 'react'
-import Input from '@/Components/Input/Input'
+import { View, Text, Image, StatusBar } from 'react-native'
+import React, {useState, useContext} from 'react'
 import Button from '@/Components/Button/Button'
 import { styles } from './styles'
 import {
@@ -9,11 +8,15 @@ import {
     useBlurOnFulfill,
     useClearByFocusCell,
   } from 'react-native-confirmation-code-field';
+import MainHeader from '@/Components/MainHeader/MainHeader'
+import AuthContext from "@/Config/AuthContext";
   
 const CELL_COUNT = 4;
 
 const EnterOtpScreen = ({navigation}) => {
-    const [value, setValue] = useState('');
+  const { myState } = useContext(AuthContext);
+  const { language } = myState;
+  const [value, setValue] = useState('');
   const ref = useBlurOnFulfill({value, cellCount: CELL_COUNT});
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
     value,
@@ -23,6 +26,7 @@ const EnterOtpScreen = ({navigation}) => {
     <View style={styles.container}>
     <StatusBar 
     backgroundColor={'#FFFFFF'}/>
+    <MainHeader back={language?.back} />
     <View style={styles.childContainer}>
       <View style={styles.logoContainer}>
         <Image
@@ -31,19 +35,18 @@ const EnterOtpScreen = ({navigation}) => {
         source={require('../../Assets/Images/Frame.png')} />
       </View>
       <View style={styles.heading}>
-        <Text style={styles.headingText}>Verify your email</Text>
-        <Text style={styles.headingText}>address</Text>
+        <Text style={styles.headingText}>{language?.verifyYourEmail}</Text>
+        <Text style={styles.headingText}>{language?.address}</Text>
       </View>
       <View style={styles.descContainer}>
         <Text style={styles.descText}>
-        We’ve sent a One Time Password (OTP) to your phone number. Please enter it below.
+        {language?.weVeSentAOneTimEPasswordToYourPhoneNumberPleaseEnterItBelow}
         </Text>
       </View>
-<View style={{padding: 24}}>
+     <View style={{padding: 30}}>
       <CodeField
         ref={ref}
         {...props}
-        // Use `caretHidden={false}` when users can't paste a text value, because context menu doesn't appear
         value={value}
         onChangeText={setValue}
         cellCount={CELL_COUNT}
@@ -61,22 +64,19 @@ const EnterOtpScreen = ({navigation}) => {
       />
       </View>
       <View style={styles.buttonContainer}>
-      <Button title={'VERIFY CODE'}
+      <Button title={language?.verifyCode}
       onPress={()=> navigation.navigate('AddMobileNumber')}
        />
       </View>
-      <View style={styles.notAccountContainer}>
-        <Text style={styles.noAccountText}>Code was sent to your email address.</Text>
-
+      <View style={styles.sentCodeTextView}>
+        <Text style={styles.sentCodeText}>{language?.codeWasSentToYourEmailAddress}</Text>
         <Text
-         style={styles.signUpText}>loremipsum@gmail.com</Text>
+         style={styles.userEmailText}>{language?.loremIpsumGmailCom}</Text>
       </View>
-      <View style={styles.signinwithConatiner}>
-        <Text style={styles.signInWithText}>RESEND CODE</Text>
-       
+      <View style={styles.resendCodeConatiner}>
+        <Text style={styles.resendCodeText}>{language?.resendCode}</Text>
       </View>
       <View style={styles.bottomLogo}>
-
       <Image 
      source={require('../../Assets/Images/Ellipse.png')} />
      </View>
