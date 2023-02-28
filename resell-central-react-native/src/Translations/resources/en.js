@@ -10,7 +10,13 @@ export default {
     signIn: 'SIGN IN',
     dontHaveAccount: "Don't have account.",
     signUp: 'Sign UP',
-    orSignInWith : 'Or Sign in with'
+    orSignInWith : 'Or Sign in with',
+
+
+
+
+   
+    accounting: 'Accounting',
 
     },
   fr: {
