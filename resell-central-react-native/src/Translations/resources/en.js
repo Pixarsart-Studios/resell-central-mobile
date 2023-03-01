@@ -73,6 +73,16 @@ export default {
     investments: "Investments",
     ADDMORE: "ADD MORE",
     ADDEXPENSES: "ADD EXPENSES",
+
+    ///// Add Product Screen
+    addAProduct: 'Add a Product',
+    selectProductCategory: 'Select Product Category',
+    selectCategory: 'Select Category',
+    selectContion: 'Select Contion',    
+    selectYear: 'Select Year',
+    uploadImages: 'UPLOAD IMAGES',
+    selectMediaOption: 'Select Media Option',
+    CONTINUE: 'CONTINUE',
   },
   fr: {
     welcome: "nous sommes localisés maintenant",

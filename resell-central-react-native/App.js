@@ -10,6 +10,7 @@ import AuthContext from './src/Config/AuthContext'
 import { useReducer } from 'react'
 import Languages from './src/Translations/resources/en'
 import Accounting from '@/screens/Accounting/Accounting'
+import AddProduct from '@/screens/AddProduct/AddProduct'
 // import  from '@react-native-async-storage/async-storage/jest/async-storage-mock'
 
 const reducer = (prevState, action) => {
@@ -154,7 +155,7 @@ const App = () => {
         <NavigationContainer>
         <PersistGate loading={null} persistor={persistor}>
           {/* <DrawerNavigation /> */}
-          <Accounting />
+          <AddProduct />
         </PersistGate>
         </NavigationContainer>
       </Provider>
