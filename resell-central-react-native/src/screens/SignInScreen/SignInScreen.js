@@ -33,7 +33,7 @@ const SignInScreen = ({ props, navigation }) => {
         {/* <Text style={{color:'red',height:40,width:'100%'}} >{language?.welcome}</Text> */}
         <View style={styles.descContainer}>
           <Text style={styles.descText}>
-            {language?.LoremIpsumolorSitConsecteturElit}
+            {language?.loremIpsumolorSitConsecteturElit}
           </Text>
         </View>
         <View style={styles.labelContainer}>
