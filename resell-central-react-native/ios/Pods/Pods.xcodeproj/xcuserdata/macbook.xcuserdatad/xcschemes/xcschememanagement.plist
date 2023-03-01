@@ -16,6 +16,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BVLinearGradient.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>CocoaAsyncSocket.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -183,6 +188,11 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>56</integer>
+		</dict>
+		<key>RNSVG.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>RNSVG.xcscheme</key>
 		<dict>
