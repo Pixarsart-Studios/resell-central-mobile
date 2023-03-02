@@ -115,7 +115,8 @@ export default {
     postalCode: 'Postal Code',
     save: 'Save',
     cancel: 'CANCEL',
-
+    connect: 'CONNECT',
+    connected: 'CONNECTED'
   },
   fr: {
     welcome: "nous sommes localisés maintenant",
