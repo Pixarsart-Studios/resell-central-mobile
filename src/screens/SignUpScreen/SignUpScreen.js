@@ -62,7 +62,10 @@ const SignUpScreen = ({ navigation }) => {
           validationSchema={validationSchema}
           onSubmit={() => navigation.navigate("OtpScreen")}
         >
-          <MainHeader back={language?.back} />
+          <MainHeader
+            onPress={() => navigation?.goBack()}
+            back={language?.back}
+          />
           <View style={styles.logoContainer}>
             <Image
               resizeMode="contain"
@@ -146,7 +149,7 @@ const SignUpScreen = ({ navigation }) => {
               <Text style={styles.tACPPText}>{language?.privacyPolicy}</Text>
             </View>
             <View style={styles.btnView}>
-            <AppFormSubmitButton title={language?.signUpCapital} />
+              <AppFormSubmitButton title={language?.signUpCapital} />
             </View>
           </View>
         </AppForm>
@@ -170,9 +173,10 @@ const SignUpScreen = ({ navigation }) => {
           </View>
         </View>
         <Image
-        style={styles.ellipse} source={require("../../Assets/Images/Ellipse.png")} />
+          style={styles.ellipse}
+          source={require("../../Assets/Images/Ellipse.png")}
+        />
       </ScrollView>
-
     </View>
   );
 };

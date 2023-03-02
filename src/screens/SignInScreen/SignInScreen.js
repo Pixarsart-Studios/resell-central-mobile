@@ -1,7 +1,7 @@
 import {
   View,
   Text,
-  TextInput,
+  TouchableOpacity,
   StyleSheet,
   Image,
   StatusBar,
@@ -50,9 +50,12 @@ const SignInScreen = ({ props, navigation }) => {
           </View>
           <Input style={styles.input} />
         </View>
-        <View style={styles.forgotTextContainer}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("ForgotPasswordScreen")}
+          style={styles.forgotTextContainer}
+        >
           <Text style={styles.forgotText}>{language?.forgotPassword}</Text>
-        </View>
+        </TouchableOpacity>
         <View style={styles.buttonContainer}>
           <Button
             onPress={() => {

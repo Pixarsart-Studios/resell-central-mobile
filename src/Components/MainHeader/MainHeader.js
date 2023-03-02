@@ -4,11 +4,20 @@ import { Icon } from "react-native-vector-icons/Icon";
 import styles from "./styles";
 
 const MainHeader = memo(
-  ({ containerStyle, heading, navigation, isLogout, onPress, back, icon }) => {
+  ({
+    containerStyle,
+    props,
+    heading,
+    navigation,
+    isLogout,
+    onPress,
+    back,
+    icon,
+  }) => {
     return (
       <View style={[styles.container, { ...containerStyle }]}>
         {back ? (
-          <TouchableOpacity style={styles.leftViewStyle} onPress={onPress}>
+          <TouchableOpacity onPress={onPress} style={styles.leftViewStyle}>
             <Text style={styles.back}>{back}</Text>
           </TouchableOpacity>
         ) : null}
