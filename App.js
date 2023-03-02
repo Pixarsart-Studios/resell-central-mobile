@@ -5,11 +5,13 @@ import { PersistGate } from "redux-persist/lib/integration/react";
 import { store, persistor } from "@/Store";
 import "./src/Translations";
 import DrawerNavigation from "./src/Navigators/Drawer";
+import Root from "./src/Navigators/RootNavigation";
 import { NavigationContainer } from "@react-navigation/native";
 import AuthContext from "./src/Config/AuthContext";
 import { useReducer } from "react";
 import Languages from "./src/Translations/resources/en";
 import Accounting from "@/screens/Accounting/Accounting";
+import AuthStack from "@/Navigators/Application";
 import AddProduct from "@/screens/AddProduct/AddProduct";
 import CreateProduct from "@/screens/CreateProduct/CreateProduct";
 // import  from '@react-native-async-storage/async-storage/jest/async-storage-mock'
@@ -151,8 +153,8 @@ const App = () => {
       <Provider store={store}>
         <NavigationContainer>
           <PersistGate loading={null} persistor={persistor}>
-            <DrawerNavigation />
-            {/* <CreateProduct /> */}
+            <Root />
+            {/* <DrawerNavigation /> */}
           </PersistGate>
         </NavigationContainer>
       </Provider>

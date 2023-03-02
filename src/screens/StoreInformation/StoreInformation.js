@@ -42,7 +42,7 @@ const StoreInformation = ({ navigation }) => {
         <View style={styles.buttonContainer}>
           <Button
             title={"SUBMIT"}
-            onPress={() => navigation.navigate("MainNavigator")}
+            onPress={() => navigation.replace("MainNavigator")}
           />
         </View>
       </View>

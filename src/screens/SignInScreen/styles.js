@@ -1,7 +1,21 @@
-import { bgBlack, bgLightGrey, bgWhite, strokeBlue, strokeGray, strokeWhite, textDarkGrey, textError, textLightGrey } from '@/Constants/Colors'
-import { proximaNovaAltBold, proximaNovaRegular } from '@/Constants/Fonts'
-import { StyleSheet } from 'react-native'
-import {widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP} from 'react-native-responsive-screen';
+import {
+  bgBlack,
+  bgLightGrey,
+  bgWhite,
+  strokeBlue,
+  strokeGray,
+  strokeWhite,
+  textDarkGrey,
+  textError,
+  textLightGrey,
+} from "@/Constants/Colors";
+// import { proximaNovaAltBold, proximaNovaRegular } from '@/Constants/Fonts'
+import { StyleSheet } from "react-native";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+  heightPercentageToDP,
+} from "react-native-responsive-screen";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 export const styles = StyleSheet.create({
@@ -9,51 +23,51 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   childContainer: {
-    height: hp('100%'),
-    width: wp('100%'),
-    backgroundColor: bgWhite
+    height: hp("100%"),
+    width: wp("100%"),
+    backgroundColor: bgWhite,
   },
   logoContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingTop: '8%',
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: "8%",
   },
   logo: {
-    height: hp('17%'),
-    width: wp('30%')
+    height: hp("17%"),
+    width: wp("30%"),
   },
   labelContainer: {
     backgroundColor: strokeWhite,
-    alignSelf: 'flex-start',
-    marginStart: '8.2%',
+    alignSelf: "flex-start",
+    marginStart: "8.2%",
     zIndex: 1,
     elevation: 1,
     shadowColor: bgWhite,
-    top: '1%',
+    top: "1%",
   },
   emailLabel: {
-    fontWeight: '400',
+    fontWeight: "400",
     fontSize: 14,
     lineHeight: 18.2,
     color: textDarkGrey,
   },
   passwordLabel: {
     backgroundColor: strokeWhite,
-    alignSelf: 'flex-start',
-    marginStart: '3%',
+    alignSelf: "flex-start",
+    marginStart: "3%",
     zIndex: 1,
     elevation: 1,
     shadowColor: bgWhite,
-    top: '6%',
+    top: "6%",
   },
   passwordLabelText: {
-    fontWeight: '400',
+    fontWeight: "400",
     fontSize: 14,
     lineHeight: 18.2,
-    color: textDarkGrey
+    color: textDarkGrey,
   },
   inputContainer: {
-    height: hp('17%'),
+    height: hp("17%"),
     paddingLeft: 24,
     paddingRight: 24,
   },
@@ -61,90 +75,89 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     borderColor: strokeGray,
-    height: '93%',
+    height: "93%",
   },
   heading: {
-    paddingLeft: 24
+    paddingLeft: 24,
   },
   headingText: {
     fontSize: 24,
     lineHeight: 28.8,
     color: bgBlack,
-    fontFamily: proximaNovaAltBold,
+    fontFamily: "ProximaNova-Bold",
   },
   descContainer: {
-    paddingLeft: 24,    
-    paddingTop: 8
-},
-descText: {
-    fontWeight: '400',
+    paddingLeft: 24,
+    paddingTop: 8,
+  },
+  descText: {
+    fontWeight: "400",
     fontSize: 16,
     lineHeight: 20.8,
-    fontFamily: proximaNovaRegular,
+    fontFamily: "ProximaNova-Regular",
     color: textDarkGrey,
-
-},
-buttonContainer:{
-  paddingTop: 10,
-},
+  },
+  buttonContainer: {
+    paddingTop: 10,
+  },
   forgotTextContainer: {
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
-    paddingRight: 24
+    justifyContent: "flex-end",
+    alignItems: "flex-end",
+    paddingRight: 24,
   },
   forgotText: {
     color: textError,
-    fontWeight: '400',
+    fontWeight: "400",
     fontSize: 12,
     lineHeight: 16,
-    paddingTop: '1%',
-    paddingBottom: '5%',
+    paddingTop: "1%",
+    paddingBottom: "5%",
   },
   notAccountContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    paddingTop: '4.5%'
+    flexDirection: "row",
+    justifyContent: "center",
+    paddingTop: "4.5%",
   },
   noAccountText: {
-    fontWeight: '400',
+    fontWeight: "400",
     fontSize: 12,
     lineHeight: 16,
     color: textDarkGrey,
   },
   signUpText: {
     color: strokeBlue,
-    fontWeight: '700',
+    fontWeight: "700",
     fontSize: 14,
     lineHeight: 16.8,
     paddingLeft: 3,
   },
   signinwithConatiner: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingTop: '12%',
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: "12%",
   },
   signInWithText: {
-    fontWeight: '400',
+    fontWeight: "400",
     fontSize: 12,
     lineHeight: 16,
-    color: textDarkGrey
+    color: textDarkGrey,
   },
   signInOptionContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   fbLogo: {
-    marginRight: '2.5%',
+    marginRight: "2.5%",
     height: 40,
     width: 40,
-    marginTop: '3.5%'
+    marginTop: "3.5%",
   },
   googleLogo: {
-    marginLeft: '3%',
+    marginLeft: "3%",
     height: 40,
     width: 40,
-    marginTop: '3.5%'
+    marginTop: "3.5%",
   },
-  bottomLogoView : {
-    paddingTop: hp('5.5%'),
-  }
-})
+  bottomLogoView: {
+    paddingTop: hp("5.5%"),
+  },
+});
