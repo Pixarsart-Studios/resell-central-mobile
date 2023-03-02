@@ -83,6 +83,40 @@ export default {
     uploadImages: 'UPLOAD IMAGES',
     selectMediaOption: 'Select Media Option',
     CONTINUE: 'CONTINUE',
+
+
+
+
+    ///// Settings
+    settings: 'Settings',
+    miscellaneous: 'Miscellaneous',
+    generalInformation: 'General Information',
+    linkedPlatforms: 'Linked Platforms',
+    subscriptionPlan: 'Subscription Plan',
+    userManagement: 'User Management',
+    tax: 'Tax',
+    shippingMethod: 'Shipping Method',
+    notifications: 'Notifications',
+    storeLanguage: 'Store Language',
+    communications: 'Communications',
+    storeDetails: 'Store Details',
+    storeName: 'Store Name',
+    storeEmail: 'Store Email',
+    weWillUseThisAddressIfWeNeedToContactYouAboutYourStore:"We'll use this address if we need to contact you about your store.",
+    senderEmail: 'Sender Email',
+    yourCustomersWillSeeThisAddressIfYouEmailThem: 'Your customers will see this address if you email them.',
+    storeIndustry: 'Store Industry',
+    storeAddress: 'Store Address',
+    legalNameOfCompany: 'Legal Name Of Company',
+    phoneNumber: 'Phone Number',
+    addressLine1: 'Address Line 1',
+    addressLine2: 'Adress Line 2',
+    countryRegion: 'Country/Region',
+    postalCode: 'Postal Code',
+    save: 'Save',
+    cancel: 'CANCEL',
+    connect: 'CONNECT',
+    connected: 'CONNECTED'
   },
   fr: {
     welcome: "nous sommes localisés maintenant",
