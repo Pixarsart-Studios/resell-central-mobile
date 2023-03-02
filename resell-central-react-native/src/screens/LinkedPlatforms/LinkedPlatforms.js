@@ -22,7 +22,7 @@ const LinkedPlatforms = () => {
           <TouchableOpacity style={connect == false? styles.connectButton: styles.connectedButton}
           onPress={()=> setConnect(true)}
           >
-            <Text style={connect == true ? styles.connectedText : null}>{connect == false ? language?.connect : language?.connected }</Text>
+            <Text style={connect == true ? styles.connectedText : connectText}>{connect == false ? language?.connect : language?.connected }</Text>
           </TouchableOpacity>
         </View>
       </View>
