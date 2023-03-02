@@ -1,12 +1,16 @@
 import { View, Text, SafeAreaView, ScrollView,Image } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import MainHeader from '@/Components/MainHeader/MainHeader'
-import { bgLightGrey, textDarkGrey, textLightGrey } from '@/Constants/Colors'
+import { bgLightGrey, mainBlue, textDarkGrey, textLightGrey } from '@/Constants/Colors'
 import Button from '@/Components/Button/Button'
 import { createProductData } from '../../../DummyData'
-import Icon from 'react-native-vector-icons/FontAwesome';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const CreateProduct = () => {
+    const [selected, isSelected] = useState(false)
+    const onValueChange = () => {
+        
+    }
   return (
     <SafeAreaView>
         <MainHeader back={'BACK'} heading={'Create Product'} />
@@ -151,8 +155,17 @@ const CreateProduct = () => {
         
         <View>
 
-        </View>
-
+        <AntDesign
+          onPress={() => onValueChange(isSelected, index)}
+          name={isSelected ? "checksquareo" : "checksquare"}
+          size={25}
+          color={
+            // isSelected ?
+             mainBlue 
+            //  : bgLightGrey
+            }
+          />
+          </View>
         <Button title={'LIST YOUR ITEMS'} />
     </SafeAreaView>
   )
