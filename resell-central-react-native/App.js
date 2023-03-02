@@ -13,6 +13,7 @@ import Accounting from '@/screens/Accounting/Accounting'
 import AddProduct from '@/screens/AddProduct/AddProduct'
 import CreateProduct from '@/screens/CreateProduct/CreateProduct'
 import Settings from '@/screens/Settings/Settings'
+import GeneralInformation from '@/screens/GeneralInformation/GeneralInformation'
 // import  from '@react-native-async-storage/async-storage/jest/async-storage-mock'
 
 const reducer = (prevState, action) => {
@@ -157,7 +158,7 @@ const App = () => {
         <NavigationContainer>
         <PersistGate loading={null} persistor={persistor}>
           {/* <DrawerNavigation /> */}
-          <Settings />
+          <GeneralInformation />
         </PersistGate>
         </NavigationContainer>
       </Provider>
