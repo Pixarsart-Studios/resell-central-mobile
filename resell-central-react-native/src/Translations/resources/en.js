@@ -83,6 +83,22 @@ export default {
     uploadImages: 'UPLOAD IMAGES',
     selectMediaOption: 'Select Media Option',
     CONTINUE: 'CONTINUE',
+
+
+
+
+    ///// Settings
+    settings: 'Settings',
+    miscellaneous: 'Miscellaneous',
+    generalInformation: 'General Information',
+    linkedPlatforms: 'Linked Platforms',
+    subscriptionPlan: 'Subscription Plan',
+    userManagement: 'User Management',
+    tax: 'Tax',
+    shippingMethod: 'Shipping Method',
+    notifications: 'Notifications',
+    storeLanguage: 'Store Language',
+    communications: 'Communications',
   },
   fr: {
     welcome: "nous sommes localisés maintenant",
