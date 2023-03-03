@@ -35,6 +35,8 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
   // for add delay in spash screen
   sleep(2.0);
   
+  
+  
   RCTAppSetupPrepareApp(application);
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
@@ -48,7 +50,7 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 #endif
 
   NSDictionary *initProps = [self prepareInitialProps];
-  UIView *rootView = RCTAppSetupDefaultRootView(bridge, @"MyApp", initProps);
+  UIView *rootView = RCTAppSetupDefaultRootView(bridge, @"Resell-Central", initProps);
 
   if (@available(iOS 13.0, *)) {
     rootView.backgroundColor = [UIColor systemBackgroundColor];
