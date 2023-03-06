@@ -126,6 +126,7 @@ export default {
     premiumPlan: 'Premium Plan',
     loremIpsumDolorSitAmet : 'Lorem ipsum dolor sit amet ',
     sumDolorSitAmet : 'Sum dolor sit amet ',
+    getStarted: 'GET STARTED',
   },
   fr: {
     welcome: "nous sommes localisés maintenant",

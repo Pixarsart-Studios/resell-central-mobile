@@ -1,6 +1,6 @@
-import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
-import React, { useState, useContext } from "react";
-import { linkedPlatformsData } from "../../../DummyData";
+import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity, ImageBackground, FlatList } from "react-native";
+import React, { useContext } from "react";
+import { plansArray } from "../../../DummyData";
 import MainHeader from "@/Components/MainHeader/MainHeader";
 import AuthContext from "@/Config/AuthContext";
 import { mainBlue, bgLightGrey, secondaryBlue, bgWhite, strokeGray, textDarkGrey, primaryButton, strokeWhite, textWhite  } from "@/Constants/Colors";
@@ -10,6 +10,66 @@ import LinearGradient from "react-native-linear-gradient";
 const SubscriptionPlans = () => {
   const { myState } = useContext(AuthContext);
   const { language } = myState;
+
+  const Item = ({ planName, loreamIpsum, sumDolorSitAmet }) => (
+    <View style={styles.itemContainer}>
+      <View style={styles.itemView}>
+        <View>
+           <Text style={styles.title}>{planName}</Text>
+        <View style={styles.priceAndDayView}>
+          <Text style={styles.priceTextInGreyCard}>{language?.$300}</Text>
+          <Text style={styles.dayTextInGreyCard}>{language?.dayAfterPrice}</Text>
+        </View>      
+           <View style={ styles.row }>
+        <View style={ styles.bullet }>
+          <Text style={{color: textDarkGrey}}>{'\u2022' + " "}</Text>
+        </View>
+        <View style={ styles.bulletText }>
+        </View>  
+
+        <Text style={styles.detail}>{loreamIpsum}</Text>
+        </View>
+       
+        <View style={ styles.row }>
+        <View style={ styles.bullet }>
+          <Text style={{color: textDarkGrey}}>{'\u2022' + " "}</Text>
+        </View>
+        <View style={ styles.bulletText }>
+        </View>  
+
+        <Text style={styles.detail}>{sumDolorSitAmet}</Text>
+        </View>
+       
+        <View style={ styles.row }>
+        <View style={ styles.bullet }>
+          <Text style={{color: textDarkGrey}}>{'\u2022' + " "}</Text>
+        </View>
+        <View style={ styles.bulletText }>
+        </View>  
+
+        <Text style={styles.detail}>{loreamIpsum}</Text>
+        </View>
+       
+        <View style={ styles.row }>
+        <View style={ styles.bullet }>
+          <Text style={{color: textDarkGrey}}>{'\u2022' + " "}</Text>
+        </View>
+        <View style={ styles.bulletText }>
+        </View>  
+
+        <Text style={styles.detail}>{sumDolorSitAmet}</Text>
+        </View>       
+
+          <TouchableOpacity 
+         style={styles.getStartedBtn}
+         onPress={()=> console.log('asdasda')}
+          >
+            <Text style={styles.getStartedText}>{language.getStarted}</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  );
 
   return (
     <SafeAreaView>
@@ -48,7 +108,6 @@ const SubscriptionPlans = () => {
           </View>
         </View>
       </LinearGradient>
-
       <View style={styles.billingMethodView}>
           <Text style={styles.boldText}>{language?.billingMethod}</Text>
           <Text style={styles.masterCardNumberText}>{language?.masterCardEnding} *******0123</Text>
@@ -61,15 +120,21 @@ const SubscriptionPlans = () => {
         <Text style={styles.otherPlansText}>
             {language?.otherPlans}
         </Text>
-      
-      {/* <View style={ styles.row }>
-        <View style={ styles.bullet }>
-          <Text>{'\u2022' + " "}</Text>
-        </View>
-        <View style={ styles.bulletText }>
-          <Text>ssddsss</Text>
-        </View>
-        </View> */}
+
+        <FlatList
+          horizontal
+          key={2}
+          data={plansArray}
+          renderItem={({ item, i }) => (
+            <Item
+            keyExtractor={(item) => item.id}
+            planName={item.planName}
+            loreamIpsum={item.loreamIpsum}
+            sumDolorSitAmet={item.sumDolorSitAmet}
+            // detail={item.detail}
+            />
+          )}
+        />
       </View>
     
     </SafeAreaView>
@@ -78,7 +143,7 @@ const SubscriptionPlans = () => {
 
 const styles = StyleSheet.create({
   blueCard: {
-    height: '30%',
+    height: 150,
     width: "88%",
     backgroundColor: mainBlue,
     borderRadius: 5,
@@ -113,15 +178,16 @@ const styles = StyleSheet.create({
     color:bgWhite
   },
   priceAndDayView: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    alignItems:'center'
   },
   reviewStatus: {
     paddingLeft: '18%'
   },
   billingMethodView:{
-    height: '25%', 
+    height: 138, 
     width: '88%',
-    marginTop: 12,
+    marginTop: 24,
     borderRadius: 5,
     borderWidth: 1,
     borderColor: strokeGray,
@@ -169,15 +235,65 @@ row: {
     flexDirection: 'row',
     alignItems: 'flex-start',
     flexWrap: 'wrap',
-    
-    marginVertical: 4
+    marginVertical: 6
 },
 bullet: {
     width: 10
 },
 bulletText: {
    
+},
+itemView: {
+  height: 257,
+  width: 241,
+  backgroundColor: bgLightGrey,
+  borderRadius: 5,
+  marginLeft: 24,
+  paddingLeft: 24,
+  paddingTop: 24,
+  marginTop: 24
+},
+title: {
+  fontWeight: '700',
+  fontSize: 14,
+  lineHeight: 16.8,
+},
+priceTextInGreyCard : {
+  fontWeight: '700',
+  fontSize: 18,
+  lineHeight: 21.6,
+  paddingTop: 6
+},
+dayTextInGreyCard: {
+  fontWeight: '400',
+  fontSize: 12,
+  lineHeight: 16,
+  color:textDarkGrey,
+  paddingLeft:2,
+  paddingTop: 6
+},
+detail: {
+  fontWeight: '400',
+  fontSize: 14,
+  lineHeight: 18.2,
+  color: textDarkGrey
+},
+getStartedBtn: {
+  height: 32,
+  width: 97,
+  backgroundColor: primaryButton,
+  borderRadius: 5,
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginTop: 16
+},
+getStartedText: {
+  fontWeight: '600',
+  fontSize: 10,
+  lineHeight: 12.18,
+  color: textWhite
 }
+
 });
 
 export default SubscriptionPlans;
