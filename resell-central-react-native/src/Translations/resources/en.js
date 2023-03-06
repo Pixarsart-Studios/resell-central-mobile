@@ -92,7 +92,7 @@ export default {
     miscellaneous: 'Miscellaneous',
     generalInformation: 'General Information',
     linkedPlatforms: 'Linked Platforms',
-    subscriptionPlan: 'Subscription Plan',
+    subscriptionPlan: 'Subscription Plans',
     userManagement: 'User Management',
     tax: 'Tax',
     shippingMethod: 'Shipping Method',
@@ -116,7 +116,14 @@ export default {
     save: 'Save',
     cancel: 'CANCEL',
     connect: 'CONNECT',
-    connected: 'CONNECTED'
+    connected: 'CONNECTED',
+    OutOf100Products: '47 out of 100 products',
+    dayAfterPrice: '/mon',
+    billingMethod: 'Billing Method',
+    masterCardEnding: 'Master Card Ending',
+    managePaymentMethod: 'Manage Payment Method',
+    
+    
   },
   fr: {
     welcome: "nous sommes localisés maintenant",
