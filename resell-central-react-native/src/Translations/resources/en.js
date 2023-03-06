@@ -121,9 +121,11 @@ export default {
     dayAfterPrice: '/mon',
     billingMethod: 'Billing Method',
     masterCardEnding: 'Master Card Ending',
-    managePaymentMethod: 'Manage Payment Method',
-    
-    
+    managePaymentMethod: 'MANAGE PAYMENT METHOD',
+    otherPlans: 'Other Plans',
+    premiumPlan: 'Premium Plan',
+    loremIpsumDolorSitAmet : 'Lorem ipsum dolor sit amet ',
+    sumDolorSitAmet : 'Sum dolor sit amet ',
   },
   fr: {
     welcome: "nous sommes localisés maintenant",

@@ -3,13 +3,14 @@ import React, { useState, useContext } from "react";
 import { linkedPlatformsData } from "../../../DummyData";
 import MainHeader from "@/Components/MainHeader/MainHeader";
 import AuthContext from "@/Config/AuthContext";
-import { mainBlue, bgLightGrey, secondaryBlue, bgWhite, strokeGray  } from "@/Constants/Colors";
+import { mainBlue, bgLightGrey, secondaryBlue, bgWhite, strokeGray, textDarkGrey, primaryButton, strokeWhite, textWhite  } from "@/Constants/Colors";
 import * as Progress from "react-native-progress";
 import LinearGradient from "react-native-linear-gradient";
 
 const SubscriptionPlans = () => {
   const { myState } = useContext(AuthContext);
   const { language } = myState;
+
   return (
     <SafeAreaView>
       <MainHeader back={language?.back} heading={language?.subscriptionPlan} />
@@ -49,13 +50,28 @@ const SubscriptionPlans = () => {
       </LinearGradient>
 
       <View style={styles.billingMethodView}>
-
-          <Text>{language?.billingMethod}</Text>
-          <Text>{language?.masterCardEnding}</Text>
-         <TouchableOpacity>
-            <Text>{language?.managePaymentMethod}</Text>
+          <Text style={styles.boldText}>{language?.billingMethod}</Text>
+          <Text style={styles.masterCardNumberText}>{language?.masterCardEnding} *******0123</Text>
+         <TouchableOpacity style={styles.btn}>
+            <Text style={styles.btnText}>{language?.managePaymentMethod}</Text>
          </TouchableOpacity>
       </View>
+
+      <View>
+        <Text style={styles.otherPlansText}>
+            {language?.otherPlans}
+        </Text>
+      
+      {/* <View style={ styles.row }>
+        <View style={ styles.bullet }>
+          <Text>{'\u2022' + " "}</Text>
+        </View>
+        <View style={ styles.bulletText }>
+          <Text>ssddsss</Text>
+        </View>
+        </View> */}
+      </View>
+    
     </SafeAreaView>
   );
 };
@@ -109,9 +125,59 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 1,
     borderColor: strokeGray,
-    marginLeft: 24
+    marginLeft: 24,
+},
+boldText: {
+    fontWeight: '700',
+    fontSize: 14,
+    lineHeight: 16.8,
+    paddingLeft: 24,
+    paddingTop: 24
+},
+masterCardNumberText: {
+    fontWeight: '400',
+    fontSize: 12,
+    lineHeight:16,
+    color: textDarkGrey,
+    paddingLeft: 24,
+    paddingTop: 6
+},
+btn: {
+    height: '25%',
+    width: '50%',
+    backgroundColor: primaryButton,
+    borderRadius: 5,
+    justifyContent: 'center',  
+    alignItems: 'center',
+    marginLeft: 24,
+    marginTop: 16,
+},
+btnText: {
+  fontWeight: '600',
+  fontSize: 10,
+  lineHeight: 12.18,
+  color: strokeWhite
+},
+otherPlansText: {
+    fontWeight: '700',
+    fontSize: 16,
+    lineHeight: 19.2,
+    paddingLeft: 24,
+    paddingTop: 24
+},
+row: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    flexWrap: 'wrap',
+    
+    marginVertical: 4
+},
+bullet: {
+    width: 10
+},
+bulletText: {
+   
 }
-  
 });
 
 export default SubscriptionPlans;
