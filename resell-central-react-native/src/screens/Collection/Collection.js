@@ -4,7 +4,7 @@ import {
   Image,
   StyleSheet,
   SafeAreaView,
-  TouchableOpacity
+  TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
 import MainHeader from "@/Components/MainHeader/MainHeader";
@@ -13,11 +13,12 @@ import CheckBox from "@react-native-community/checkbox";
 import { bgLightGrey, mainBlue } from "@/Constants/Colors";
 import { widthPercentageToDP as wp } from "react-native-responsive-screen";
 
-const Collection = () => {
+const Collection = (props) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   return (
     <SafeAreaView>
       <MainHeader
+        props={props}
         icon={
           <Image
             style={styles.headerImageStyle}
@@ -38,22 +39,16 @@ const Collection = () => {
         </View>
       </View>
       <View style={styles.secondRowView}>
-       
-      <View style={styles.checkBoxAndTextView}>
-      <View style={styles.optionStyle}>
-        <TouchableOpacity
-          style={[
-            styles.radio,
-          ]}
-        >
-          <View style={styles.innerRedio} />
-        </TouchableOpacity>
-        <Text style={[styles.textStyle, { marginLeft: 20 }]}>
-          Select All
-        </Text>
-      </View>
+        <View style={styles.checkBoxAndTextView}>
+          <View style={styles.optionStyle}>
+            <TouchableOpacity style={[styles.radio]}>
+              <View style={styles.innerRedio} />
+            </TouchableOpacity>
+            <Text style={[styles.textStyle, { marginLeft: 20 }]}>
+              Select All
+            </Text>
           </View>
-
+        </View>
 
         <View style={styles.importExportView}>
           <Text style={styles.importText}>IMPORT</Text>
@@ -103,9 +98,10 @@ const Collection = () => {
         }}
       />
       <View style={styles.floatingButtonView}>
-        <Image 
-        style={styles.floatingButton}
-        source={require('../../Assets/Images/floatingButtonImage.png')}/>
+        <Image
+          style={styles.floatingButton}
+          source={require("../../Assets/Images/floatingButtonImage.png")}
+        />
       </View>
     </SafeAreaView>
   );
@@ -173,11 +169,11 @@ const styles = StyleSheet.create({
   productOptionImage: { height: 20, width: 25 },
   floatingButtonView: {
     paddingTop: 485,
-    paddingLeft: 345
+    paddingLeft: 345,
   },
   floatingButton: {
     height: 45,
-    width: 45
+    width: 45,
   },
   optionStyle: {
     width: wp(85),
@@ -189,9 +185,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   textStyle: {
-    fontWeight: '400',
+    fontWeight: "400",
     fontSize: 12,
-    lineHeight: 16
+    lineHeight: 16,
   },
   radio: {
     width: 22,
@@ -200,7 +196,7 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     alignItems: "center",
     justifyContent: "center",
-    borderColor: bgLightGrey 
+    borderColor: bgLightGrey,
   },
   innerRedio: {
     height: 22,

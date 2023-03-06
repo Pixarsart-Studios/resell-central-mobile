@@ -22,7 +22,7 @@ import {
 } from "@/Constants/Colors";
 import { DummyData, ManageReturnsData } from "../../../DummyData";
 
-const ManageReturns = () => {
+const ManageReturns = (props) => {
   const categories = ["All", "Resolved", "Unresolved"];
   const [categoryIndex, setCategoryIndex] = useState(0);
 
@@ -61,6 +61,7 @@ const ManageReturns = () => {
   return (
     <SafeAreaView>
       <MainHeader
+        props={props}
         icon={
           <Image
             style={styles.headerImageStyle}
@@ -135,11 +136,24 @@ const ManageReturns = () => {
                 source={item.greenShowsImage}
               />
               <Image style={styles.productImage} source={item.greyShowsImage} />
-            <ImageBackground style={[styles.productImage, {justifyContent: 'center', alignItems: 'center'}]} source={item.moreImageBackground}>
-            <Image
-            resizeMode="contain" style={styles.imageCount} source={item.threePlusImage} />
-            <Image resizeMode="contain" style={styles.imageCount} source={item.moreImage} />
-            </ImageBackground>
+              <ImageBackground
+                style={[
+                  styles.productImage,
+                  { justifyContent: "center", alignItems: "center" },
+                ]}
+                source={item.moreImageBackground}
+              >
+                <Image
+                  resizeMode="contain"
+                  style={styles.imageCount}
+                  source={item.threePlusImage}
+                />
+                <Image
+                  resizeMode="contain"
+                  style={styles.imageCount}
+                  source={item.moreImage}
+                />
+              </ImageBackground>
             </View>
           </TouchableOpacity>
         );
@@ -263,11 +277,11 @@ const styles = StyleSheet.create({
     color: textValidation,
   },
   cardText: {
-    fontWeight: '400',
+    fontWeight: "400",
     fontSize: 12,
     lineHeight: 16,
     color: textDarkGrey,
-    padding: 5
+    padding: 5,
   },
   imgRowView: {
     flexDirection: "row",
@@ -288,7 +302,7 @@ const styles = StyleSheet.create({
   imageCount: {
     height: 30,
     width: 30,
-  }
+  },
 });
 
 export default ManageReturns;

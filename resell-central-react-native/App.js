@@ -1,21 +1,19 @@
-import 'react-native-gesture-handler'
-import React,{useState , useContext , useEffect} from 'react'
-import { Provider, useDispatch } from 'react-redux'
-import { PersistGate } from 'redux-persist/lib/integration/react'
-import { store, persistor } from '@/Store'
-import './src/Translations'
-import DrawerNavigation from './src/Navigators/Drawer'
-import {NavigationContainer} from '@react-navigation/native';
-import AuthContext from './src/Config/AuthContext'
-import { useReducer } from 'react'
-import Languages from './src/Translations/resources/en'
-import Accounting from '@/screens/Accounting/Accounting'
-import AddProduct from '@/screens/AddProduct/AddProduct'
-import CreateProduct from '@/screens/CreateProduct/CreateProduct'
-import Settings from '@/screens/Settings/Settings'
-import GeneralInformation from '@/screens/GeneralInformation/GeneralInformation'
-import LinkedPlatforms from '@/screens/LinkedPlatforms/LinkedPlatforms'
-import SubscriptionPlans from '@/screens/SubscriptionPlans/SubscriptionPlans'
+import "react-native-gesture-handler";
+import React, { useState, useContext, useEffect } from "react";
+import { Provider, useDispatch } from "react-redux";
+import { PersistGate } from "redux-persist/lib/integration/react";
+import { store, persistor } from "@/Store";
+import "./src/Translations";
+import DrawerNavigation from "./src/Navigators/Drawer";
+import Root from "./src/Navigators/RootNavigation";
+import { NavigationContainer } from "@react-navigation/native";
+import AuthContext from "./src/Config/AuthContext";
+import { useReducer } from "react";
+import Languages from "./src/Translations/resources/en";
+import Accounting from "@/screens/Accounting/Accounting";
+import AuthStack from "@/Navigators/Application";
+import AddProduct from "@/screens/AddProduct/AddProduct";
+import CreateProduct from "@/screens/CreateProduct/CreateProduct";
 // import  from '@react-native-async-storage/async-storage/jest/async-storage-mock'
 
 const reducer = (prevState, action) => {
@@ -69,14 +67,12 @@ const lang_checker = (lang) => {
 };
 
 const App = () => {
-
   const [state, dispatch] = useReducer(reducer, {
     isSignout: true,
     userToken: null,
     isConnected: false,
     language: lang_checker("English"),
   });
-
 
   // const [language, setLang] = useState(null);
   // const { changeLanguage, myState } = useContext(AuthContext);
@@ -93,11 +89,9 @@ const App = () => {
   //   getLanguage();
   // }, []);
 
- 
-
   useEffect(() => {
     (async () => {
-      let lang = 'English'
+      let lang = "English";
       // let token = await Helper.getData("homeToken");
       // let lang = await Helper.getData("language");
       console.log("lang", lang);
@@ -151,21 +145,21 @@ const App = () => {
       });
     },
 
-    myState : state
-  }
+    myState: state,
+  };
 
-  return(
-    <AuthContext.Provider  value={authContext}>
+  return (
+    <AuthContext.Provider value={authContext}>
       <Provider store={store}>
         <NavigationContainer>
-        <PersistGate loading={null} persistor={persistor}>
-          {/* <DrawerNavigation /> */}
-          <SubscriptionPlans />
-        </PersistGate>
+          <PersistGate loading={null} persistor={persistor}>
+            <Root />
+            {/* <DrawerNavigation /> */}
+          </PersistGate>
         </NavigationContainer>
       </Provider>
-  </AuthContext.Provider>
-  )
-}
+    </AuthContext.Provider>
+  );
+};
 
-export default App
+export default App;

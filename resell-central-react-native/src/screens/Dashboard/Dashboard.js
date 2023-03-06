@@ -1,44 +1,45 @@
-import { View, Text, Image, SafeAreaView } from 'react-native'
-import React from 'react'
-import { Header } from '@react-navigation/stack'
-import MainHeader from '@/Components/MainHeader/MainHeader'
-import ArrowDown from 'react-native-vector-icons/AntDesign'
-import ArrowUp from 'react-native-vector-icons/AntDesign'
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import Cube from 'react-native-vector-icons/MaterialCommunityIcons'
-import Down from 'react-native-vector-icons/AntDesign'
+import { View, Text, Image, SafeAreaView } from "react-native";
+import React from "react";
+import { Header } from "@react-navigation/stack";
+import MainHeader from "@/Components/MainHeader/MainHeader";
+import ArrowDown from "react-native-vector-icons/AntDesign";
+import ArrowUp from "react-native-vector-icons/AntDesign";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import Cube from "react-native-vector-icons/MaterialCommunityIcons";
+import Down from "react-native-vector-icons/AntDesign";
 import {
   mainBlue,
   textError,
   textSuccess,
   bgLightGrey,
   strokeBlue,
-} from '@/Constants/Colors'
+} from "@/Constants/Colors";
 import {
   proximaNovaAltBold,
   proximaNovaAltLight,
   proximaNovaBold,
   proximaNovaRegular,
-} from '@/Constants/Fonts'
+} from "@/Constants/Fonts";
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   return (
     <SafeAreaView>
       <MainHeader
-        heading={'Resell Central Seller'}
+        props={props}
+        heading={"Resell Central Seller"}
         icon={
           <Image
             style={{ height: 13, width: 20 }}
             resizeMode="center"
-            source={require('../../Assets/Images/Hamburger.png')}
+            source={require("../../Assets/Images/Hamburger.png")}
           />
         }
       />
       <View
         style={{
-          backgroundColor: 'rgba(77, 85, 159, 0.1)',
+          backgroundColor: "rgba(77, 85, 159, 0.1)",
           height: 70,
-          width: '85%',
+          width: "85%",
           marginLeft: 24,
           borderRadius: 5,
           marginTop: 15,
@@ -47,19 +48,19 @@ const Dashboard = () => {
       >
         <View
           style={{
-            flexDirection: 'row',
-            justifyContent: 'space-evenly',
-            alignItems: 'center',
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+            alignItems: "center",
           }}
         >
           <Image
             style={{ height: 60, width: 60, marginTop: 5 }}
-            source={require('../../Assets/Images/Avatar.png')}
+            source={require("../../Assets/Images/Avatar.png")}
           />
-          <View style={{ flexDirection: 'column' }}>
+          <View style={{ flexDirection: "column" }}>
             <Text
               style={{
-                fontWeight: '700',
+                fontWeight: "700",
                 fontSize: 14,
                 lineHeight: 16.8,
                 fontFamily: proximaNovaBold,
@@ -73,32 +74,32 @@ const Dashboard = () => {
       </View>
       <View
         style={{
-          backgroundColor: 'rgba(77, 85, 159, 0.1)',
+          backgroundColor: "rgba(77, 85, 159, 0.1)",
           height: 160,
-          width: '85%',
+          width: "85%",
           marginLeft: 24,
           borderRadius: 5,
           marginTop: 20,
           marginRight: 24,
-          flexDirection: 'row',
+          flexDirection: "row",
         }}
       >
         <View
           style={{
             height: 143,
             width: 148,
-            backgroundColor: 'white',
+            backgroundColor: "white",
             marginLeft: 8,
             marginTop: 8,
             borderRadius: 5,
-            justifyContent: 'center',
+            justifyContent: "center",
             //  alignItems: 'center'
             paddingLeft: 24,
           }}
         >
           <Text
             style={{
-              fontWeight: '400',
+              fontWeight: "400",
               fontSize: 14,
               lineHeight: 18.2,
               fontFamily: proximaNovaRegular,
@@ -108,7 +109,7 @@ const Dashboard = () => {
           </Text>
           <Text
             style={{
-              fontWeight: '700',
+              fontWeight: "700",
               fontSize: 24,
               lineHeight: 18.2,
               fontFamily: proximaNovaBold,
@@ -119,12 +120,12 @@ const Dashboard = () => {
           </Text>
           <View
             style={{
-              backgroundColor: 'pink',
+              backgroundColor: "pink",
               height: 30,
               width: 70,
-              justifyContent: 'center',
-              alignItems: 'center',
-              flexDirection: 'row',
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "row",
               borderRadius: 3,
             }}
           >
@@ -132,7 +133,7 @@ const Dashboard = () => {
             <ArrowDown name="arrowdown" size={12} color={textError} />
             <Text
               style={{
-                fontWeight: '400',
+                fontWeight: "400",
                 fontSize: 12,
                 lineHeight: 16,
                 fontFamily: proximaNovaRegular,
@@ -151,14 +152,14 @@ const Dashboard = () => {
               marginLeft: 8,
               marginTop: 8,
               borderRadius: 5,
-              justifyContent: 'center',
+              justifyContent: "center",
               //  alignItems: 'center'
               paddingLeft: 12,
             }}
           >
             <Text
               style={{
-                fontWeight: '400',
+                fontWeight: "400",
                 fontSize: 14,
                 lineHeight: 18.2,
                 fontFamily: proximaNovaRegular,
@@ -168,7 +169,7 @@ const Dashboard = () => {
             </Text>
             <Text
               style={{
-                fontWeight: '700',
+                fontWeight: "700",
                 fontSize: 24,
                 lineHeight: 18.2,
                 fontFamily: proximaNovaBold,
@@ -179,12 +180,12 @@ const Dashboard = () => {
             </Text>
             <View
               style={{
-                backgroundColor: '#D0F0C0',
+                backgroundColor: "#D0F0C0",
                 height: 30,
                 width: 70,
-                justifyContent: 'center',
-                alignItems: 'center',
-                flexDirection: 'row',
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "row",
                 borderRadius: 3,
               }}
             >
@@ -192,7 +193,7 @@ const Dashboard = () => {
               <ArrowUp name="arrowup" size={12} color={textSuccess} />
               <Text
                 style={{
-                  fontWeight: '400',
+                  fontWeight: "400",
                   fontSize: 12,
                   lineHeight: 16,
                   fontFamily: proximaNovaRegular,
@@ -205,10 +206,10 @@ const Dashboard = () => {
           </View>
         </View>
       </View>
-      <View style={{ flexDirection: 'row' }}>
+      <View style={{ flexDirection: "row" }}>
         <View
           style={{
-            backgroundColor: '#F08F21',
+            backgroundColor: "#F08F21",
             height: 83,
             width: 156,
             marginLeft: 24,
@@ -218,15 +219,15 @@ const Dashboard = () => {
             paddingLeft: 24,
           }}
         >
-          <View style={{ flexDirection: 'row' }}>
+          <View style={{ flexDirection: "row" }}>
             <MaterialCommunityIcons
-              color={'white'}
+              color={"white"}
               name="clipboard-text-outline"
               size={17}
             />
-            <Text style={{ color: 'white', paddingLeft: 7 }}>New Orders</Text>
+            <Text style={{ color: "white", paddingLeft: 7 }}>New Orders</Text>
           </View>
-          <Text style={{ color: 'white', fontWeight: '700', paddingLeft: 24 }}>
+          <Text style={{ color: "white", fontWeight: "700", paddingLeft: 24 }}>
             154
           </Text>
         </View>
@@ -243,14 +244,14 @@ const Dashboard = () => {
           }}
         >
           <View
-            style={{ flexDirection: 'row', paddingLeft: 22, paddingTop: 24 }}
+            style={{ flexDirection: "row", paddingLeft: 22, paddingTop: 24 }}
           >
-            <Cube color={'white'} name="cube-outline" size={17} />
-            <Text style={{ color: 'white', paddingLeft: 3 }}>
+            <Cube color={"white"} name="cube-outline" size={17} />
+            <Text style={{ color: "white", paddingLeft: 3 }}>
               Ready to Ship
             </Text>
           </View>
-          <Text style={{ color: 'white', fontWeight: '700', paddingLeft: 42 }}>
+          <Text style={{ color: "white", fontWeight: "700", paddingLeft: 42 }}>
             54
           </Text>
         </View>
@@ -259,14 +260,14 @@ const Dashboard = () => {
         style={{
           borderWidth: 1,
           margin: 24,
-          height: '32%',
+          height: "32%",
           borderColor: bgLightGrey,
         }}
       >
-        <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
+        <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
           <Text
             style={{
-              fontWeight: '700',
+              fontWeight: "700",
               fontSize: 18,
               lineHeight: 21.6,
               paddingTop: 32,
@@ -280,9 +281,9 @@ const Dashboard = () => {
               height: 30,
               width: 100,
               marginTop: 32,
-              flexDirection: 'row',
-              justifyContent: 'center',
-              alignItems: 'center',
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <Text>Weekly</Text>
@@ -291,11 +292,11 @@ const Dashboard = () => {
             </View>
           </View>
         </View>
-        <View style={{ flexDirection: 'row' }}>
+        <View style={{ flexDirection: "row" }}>
           <View
             style={{
-              flexDirection: 'column',
-              justifyContent: 'space-evenly',
+              flexDirection: "column",
+              justifyContent: "space-evenly",
               paddingLeft: 12,
             }}
           >
@@ -307,11 +308,11 @@ const Dashboard = () => {
           </View>
           <View
             style={{
-              flexDirection: 'column',
+              flexDirection: "column",
               paddingLeft: 15,
               paddingTop: 16,
-              justifyContent: 'center',
-              alignItems: 'center',
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <View
@@ -327,11 +328,11 @@ const Dashboard = () => {
           </View>
           <View
             style={{
-              flexDirection: 'column',
+              flexDirection: "column",
               paddingLeft: 15,
               paddingTop: 36,
-              justifyContent: 'center',
-              alignItems: 'center',
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <View
@@ -348,11 +349,11 @@ const Dashboard = () => {
 
           <View
             style={{
-              flexDirection: 'column',
+              flexDirection: "column",
               paddingLeft: 15,
               paddingTop: 56,
-              justifyContent: 'center',
-              alignItems: 'center',
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <View
@@ -369,11 +370,11 @@ const Dashboard = () => {
 
           <View
             style={{
-              flexDirection: 'column',
+              flexDirection: "column",
               paddingLeft: 15,
               paddingTop: 5,
-              justifyContent: 'center',
-              alignItems: 'center',
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <View
@@ -390,11 +391,11 @@ const Dashboard = () => {
 
           <View
             style={{
-              flexDirection: 'column',
+              flexDirection: "column",
               paddingLeft: 17,
               paddingTop: 24,
-              justifyContent: 'center',
-              alignItems: 'center',
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <View
@@ -411,11 +412,11 @@ const Dashboard = () => {
 
           <View
             style={{
-              flexDirection: 'column',
+              flexDirection: "column",
               paddingLeft: 17,
               paddingTop: 13,
-              justifyContent: 'center',
-              alignItems: 'center',
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <View
@@ -432,11 +433,11 @@ const Dashboard = () => {
 
           <View
             style={{
-              flexDirection: 'column',
+              flexDirection: "column",
               paddingLeft: 11,
               paddingTop: 89,
-              justifyContent: 'center',
-              alignItems: 'center',
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <View
@@ -453,7 +454,7 @@ const Dashboard = () => {
         </View>
       </View>
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;
