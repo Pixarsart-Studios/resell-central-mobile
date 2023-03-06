@@ -7,3 +7,7 @@ resell-central-react-native/ios/Pods/
 
 # Ignoring Android Intellij files
 *.hprof
+
+
+# Ignoring Android build intermediates directory
+resell-central-react-native/android/app/build/intermediates/
