@@ -1,0 +1,9 @@
+# Ignoring node_modules
+resell-central-react-native/node_modules/*
+
+# Ignoring pods
+resell-central-react-native/ios/Pods/*
+
+
+# Ignoring Android Intellij files
+*.hprof
