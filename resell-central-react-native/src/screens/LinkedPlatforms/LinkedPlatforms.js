@@ -19,10 +19,13 @@ const LinkedPlatforms = () => {
         <View>
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.detail}>{detail}</Text>
-          <TouchableOpacity style={connect == false? styles.connectButton: styles.connectedButton}
+          <TouchableOpacity 
+          style={
+            connect == false? styles.connectButton: styles.connectedButton
+          }
           onPress={()=> setConnect(true)}
           >
-            <Text style={connect == true ? styles.connectedText : connectText}>{connect == false ? language?.connect : language?.connected }</Text>
+            <Text style={connect ? styles.connectedText : styles.connectText}>{connect == false ? language?.connect : language?.connected }</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -38,10 +41,10 @@ const LinkedPlatforms = () => {
           data={linkedPlatformsData}
           renderItem={({ item, i }) => (
             <Item
-              keyExtractor={(item) => item.id}
-              title={item.name}
-              image={item.image}
-              detail={item.detail}
+            keyExtractor={(item) => item.id}
+            title={item.name}
+            image={item.image}
+            detail={item.detail}
             />
           )}
         />

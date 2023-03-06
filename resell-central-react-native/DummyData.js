@@ -281,3 +281,24 @@ export const linkedPlatformsData = [
         "Google drive allows users to store files on their servers, sync them across devices.",
     },
   ];
+
+  export const plansArray = [
+    {
+        id: 1,
+        planName: 'Premium Plan',
+        loreamIpsum: 'Lorem ipsum dolor sit amet ',
+        sumDolorSitAmet: 'Sum dolor sit amet',
+    },
+    {
+        id: 2,
+        planName: 'Starter',
+        loreamIpsum: 'Lorem ipsum dolor sit amet ',
+        sumDolorSitAmet: 'Sum dolor sit amet',
+    },
+    {
+        id: 3,
+        planName: 'Starter',
+        loreamIpsum: 'Lorem ipsum dolor sit amet ',
+        sumDolorSitAmet: 'Sum dolor sit amet',
+    },
+]
