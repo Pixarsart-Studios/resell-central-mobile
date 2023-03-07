@@ -1,5 +1,5 @@
 import axios from "axios";
-import Helpers from "../../react-native/src/Helper";
+import Helpers from "../src/Helper";
 // const httpClient = axios.create();
 // httpClient.defaults.timeout = 5000;
 

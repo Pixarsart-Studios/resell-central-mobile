@@ -6,18 +6,140 @@ import {
   Image,
   StatusBar,
 } from "react-native";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Input from "@/Components/Input/Input";
 import Button from "@/Components/Button/Button";
 import { styles } from "./styles";
-import MainHeader from "@/Components/MainHeader/MainHeader";
+import Env from "../../../api/Env";
+import auth from "@react-native-firebase/auth";
+import MindAxios from "../../../api/MindAxios";
 import { useTranslation } from "react-i18next";
 import AuthContext from "@/Config/AuthContext";
 const SignInScreen = ({ props, navigation }) => {
   const { t } = useTranslation();
 
   const { myState } = useContext(AuthContext);
+  const [email, setemail] = useState("");
+  const [password, setpassword] = useState("");
+  const [errMsg, setErrMsgs] = useState("");
+  const [passErrMsg, setpassErrMsg] = useState("");
   const { language } = myState;
+
+  const checkValidations = () => {
+    let isValid = true;
+    const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var re = /^(?!.* )/;
+    if (!email) {
+      setErrMsgs("Email required");
+      isValid = false;
+    } else if (reg.test(email.trim()) == false) {
+      console.log("comming here", email);
+      setErrMsgs("Email is not valid");
+      isValid = false;
+    }
+
+    if (!password) {
+      setpassErrMsg("Password is required");
+      isValid = false;
+    } else if (re.test(password) == false) {
+      setpassErrMsg("Password is not valid");
+      isValid = false;
+    }
+
+    if (isValid) {
+      setErrMsgs("");
+      setpassErrMsg("");
+      loginWithEmailAndPassword();
+    }
+  };
+
+  const loginWithEmailAndPassword = async () => {
+    // setLoading(true);
+    // console.log(email, password);
+    // const fcmToken = await Helper.getData("fcmToken");
+    // dispatch(allActions.DataAction.ActivityModal(true));
+    try {
+      await auth().signInWithEmailAndPassword(email.trim(), password);
+      let user = auth().currentUser;
+      const firebaseToken = await user.getIdToken();
+      console.log("firebase", firebaseToken);
+      return;
+      const { data, e } = await MindAxios.post(Env.createUrl("signin"), {
+        firebase_token: firebaseToken,
+        device_name: "mobile",
+        // fcm_token: fcmToken,
+      });
+      const error = e?.response?.data;
+      // console.log("data", error);
+      // dispatch(allActions.DataAction.ActivityModal(false));
+      if (data?.success) {
+        // resetForm();
+        // let token = data?.result?.token;
+        // let id = data?.result?.user?.id;
+        const {
+          result: { user, token },
+        } = data;
+        let { id, is_email_verified, first_name } = user;
+        // console.log("user", user);
+        if (is_email_verified == 1) {
+          // console.log("user->", user);
+          // console.log("token->", token);
+          await Helper.setUser(user);
+          await Helper.storeData("loginMethod", "email");
+          await Helper.storeData("loginToken", token);
+          await Helper.storeData("userId", id.toString());
+          await Helper.storeData("homeToken", token);
+          // FINGER PRINT AUTH
+          let savedEmail = await Helper.getData("email");
+          if (savedEmail && savedEmail !== email) {
+            await AsyncStorage.removeItem("fingerPrintVAlidation");
+          } else {
+            await Helper.storeData("email", email);
+            await Helper.storeData("password", password);
+          }
+          // dispatch(allActions.DataAction.ActivityModal(false));
+          await Helper.showToastMessage("Welcome");
+          signIn(token);
+        } else {
+          let verifybody = {
+            email: email,
+            type: "EmailVerification",
+          };
+
+          const res = await MindAxios.post(
+            Env.createUrl("emails/authentication"),
+            verifybody
+          );
+          // console.log("verify response-->", res);
+          if (res?.status == 200) {
+            await Helper.showToastMessage(language?.pleaseVerifyFirst);
+            await Helper.storeData("loginToken", token);
+            await Helper.storeData("userId", id.toString());
+            navigation.navigate("confirm", {
+              values: { email, id, firstName: first_name },
+            });
+          } else {
+            // dispatch(allActions.DataAction.ActivityModal(false));
+            const {
+              e: {
+                response: {
+                  data: { message },
+                },
+              },
+            } = res;
+            alert(message);
+          }
+        }
+      } else if (error) {
+        // dispatch(allActions.DataAction.ActivityModal(false));
+        alert(error?.message);
+      }
+    } catch (error) {
+      // dispatch(allActions.DataAction.ActivityModal(false));
+      // console.log("error", error);
+      alert(error);
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -44,11 +166,29 @@ const SignInScreen = ({ props, navigation }) => {
           <Text style={styles.emailLabel}>{language?.email}</Text>
         </View>
         <View style={styles.inputContainer}>
-          <Input style={styles.input} />
+          <Input
+            value={email}
+            onChangeText={(val) => setemail(val)}
+            style={styles.input}
+          />
+          {errMsg != "" && (
+            <Text style={{ color: "red", alignSelf: "flex-end" }}>
+              {errMsg}
+            </Text>
+          )}
           <View style={styles.passwordLabel}>
             <Text style={styles.passwordLabelText}>{language?.password}</Text>
           </View>
-          <Input style={styles.input} />
+          <Input
+            value={password}
+            onChangeText={(val) => setpassword(val)}
+            style={styles.input}
+          />
+          {passErrMsg != "" && (
+            <Text style={{ color: "red", alignSelf: "flex-end" }}>
+              {passErrMsg}
+            </Text>
+          )}
         </View>
         <TouchableOpacity
           onPress={() => navigation.navigate("ForgotPasswordScreen")}
@@ -59,7 +199,8 @@ const SignInScreen = ({ props, navigation }) => {
         <View style={styles.buttonContainer}>
           <Button
             onPress={() => {
-              navigation.replace("MainNavigator");
+              checkValidations();
+              // navigation.replace("MainNavigator");
             }}
             title={language?.signIn}
           />

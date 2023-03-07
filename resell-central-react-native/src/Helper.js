@@ -1,6 +1,6 @@
 import moment from "moment";
 import { Keyboard } from "react-native";
-import colors from "../constant/colors";
+// import colors from "../constant/colors";
 // import Toast from "react-native-root-toast";
 // import analytics from "@react-native-firebase/analytics";
 import AsyncStorage from "@react-native-async-storage/async-storage";
