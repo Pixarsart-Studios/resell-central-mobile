@@ -150,7 +150,16 @@ export default {
     products: 'Products',
     giftCards: 'Git Cards',
     customers: 'Customers',
-    reports: 'Reports'
+    reports: 'Reports',
+
+    tax: 'Tax',
+    taxes: 'Taxes',
+    manageHowYourStoreChargesSalesTaxInYourShippingZones: 'Manage how your store charges sales tax in your shipping zones',
+    country: 'Country',
+    taxValue: 'Tax Value',
+    addAnotherCountry: 'ADD ANOTHER COUNTRY',
+    saveChanges: 'SAVE CHANGES',
+    
   },
   fr: {
     welcome: "nous sommes localisés maintenant",
