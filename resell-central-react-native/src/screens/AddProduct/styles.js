@@ -86,7 +86,7 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 19.2,
     color: bgBlack,
-    fontFamily: proximaNovaAltBold,
+    fontFamily: "ProximaNovaA-Bold",
     fontWeight: "700",
   },
 

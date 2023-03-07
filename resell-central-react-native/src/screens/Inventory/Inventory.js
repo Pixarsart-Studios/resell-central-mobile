@@ -15,11 +15,15 @@ import Button from "@/Components/Button/Button";
 import Input from "@/Components/Input/Input";
 import { styles } from "./styles";
 
-const Inventory = () => {
+const Inventory = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <SafeAreaView>
-      <MainHeader back={"BACK"} heading="European Base Ball" />
+      <MainHeader
+        onPress={() => props?.navigation?.goBack()}
+        back={"BACK"}
+        heading="European Base Ball"
+      />
       <View style={styles.inputView}>
         <SearchBar />
         <View style={styles.filteringIconView}>
@@ -184,8 +188,10 @@ const Inventory = () => {
               </View>
               <View style={styles.inputContainer}>
                 <Input style={styles.input} />
-                <Button title={"SEARCH PRODUCTS"} 
-                onPress={()=> setModalVisible(false)}/>
+                <Button
+                  title={"SEARCH PRODUCTS"}
+                  onPress={() => setModalVisible(false)}
+                />
               </View>
             </View>
           </View>

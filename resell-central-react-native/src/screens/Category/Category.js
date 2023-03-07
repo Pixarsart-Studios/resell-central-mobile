@@ -1,21 +1,16 @@
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  SafeAreaView,
-} from "react-native";
+import { View, Text, Image, StyleSheet, SafeAreaView } from "react-native";
 import React, { useState } from "react";
 import MainHeader from "@/Components/MainHeader/MainHeader";
 import SearchBar from "@/Components/Searchbar";
 import CheckBox from "@react-native-community/checkbox";
 import { mainBlue } from "@/Constants/Colors";
 
-const Category = () => {
+const Category = (props) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   return (
     <SafeAreaView>
       <MainHeader
+        props={props}
         icon={
           <Image
             style={styles.headerImageStyle}
@@ -92,9 +87,10 @@ const Category = () => {
         }}
       />
       <View style={styles.floatingButtonView}>
-        <Image 
-        style={styles.floatingButton}
-        source={require('../../Assets/Images/floatingButtonImage.png')}/>
+        <Image
+          style={styles.floatingButton}
+          source={require("../../Assets/Images/floatingButtonImage.png")}
+        />
       </View>
     </SafeAreaView>
   );
@@ -162,12 +158,12 @@ const styles = StyleSheet.create({
   productOptionImage: { height: 20, width: 25 },
   floatingButtonView: {
     paddingTop: 485,
-    paddingLeft: 345
+    paddingLeft: 345,
   },
   floatingButton: {
     height: 45,
-    width: 45
-  }
+    width: 45,
+  },
 });
 
 export default Category;

@@ -32,13 +32,17 @@ import { proximaNovaAltBold, proximaNovaRegular } from "@/Constants/Fonts";
 import Input from "@/Components/Input/Input";
 import Button from "@/Components/Button/Button";
 
-const InventoryAlerts = () => {
+const InventoryAlerts = (props) => {
   const categories = ["All", "Shipped", "Pending", "Canceled"];
   const [categoryIndex, setCategoryIndex] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <SafeAreaView>
-      <MainHeader back={"BACK"} heading="Manage Orders" />
+      <MainHeader
+        onPress={() => props?.navigation?.goBack()}
+        back={"BACK"}
+        heading="Manage Orders"
+      />
       <View style={styles.inputView}>
         <SearchBar />
         <View style={styles.filteringIconView}>

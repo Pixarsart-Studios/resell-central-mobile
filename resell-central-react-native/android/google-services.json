@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "163204834801",
+    "project_id": "resell-central",
+    "storage_bucket": "resell-central.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163204834801:android:5111a6e83d03950a2f9050",
+        "android_client_info": {
+          "package_name": "com.pixarsart.resellcentral"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "163204834801-qegpg04kfn58utm7bntadhc7uecuhe5h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd4cPA00lnjn8eZJCe-Qd9_2mn8UUTD0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "163204834801-qegpg04kfn58utm7bntadhc7uecuhe5h.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "163204834801-94g0oukpgvkjc9aj9otempadbl1n4f0h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pixarsart.resell-central"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
