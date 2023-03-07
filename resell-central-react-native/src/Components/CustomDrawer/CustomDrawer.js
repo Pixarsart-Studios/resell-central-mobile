@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import React from "react";
 import {
   DrawerContentScrollView,
@@ -27,9 +27,12 @@ const CustomDrawer = (props) => {
         <View style={styles.line} />
         <DrawerItemList {...props} />
       </DrawerContentScrollView>
-      <View style={styles.closeButtonView}>
+      <Pressable
+        onPress={() => props.navigation.replace("AuthStack")}
+        style={styles.closeButtonView}
+      >
         <Text style={styles.closeButton}>X Close</Text>
-      </View>
+      </Pressable>
     </View>
   );
 };

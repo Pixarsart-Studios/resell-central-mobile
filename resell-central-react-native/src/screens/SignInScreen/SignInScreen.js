@@ -6,7 +6,7 @@ import {
   Image,
   StatusBar,
 } from "react-native";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Input from "@/Components/Input/Input";
 import Button from "@/Components/Button/Button";
 import { styles } from "./styles";
@@ -15,15 +15,25 @@ import auth from "@react-native-firebase/auth";
 import MindAxios from "../../../api/MindAxios";
 import { useTranslation } from "react-i18next";
 import AuthContext from "@/Config/AuthContext";
+import Helper from "@/Helper";
+import Loader from "@/Components/Loader/Loader";
+
+// Helper
 const SignInScreen = ({ props, navigation }) => {
   const { t } = useTranslation();
-
+  const { signIn } = useContext(AuthContext);
   const { myState } = useContext(AuthContext);
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [errMsg, setErrMsgs] = useState("");
   const [passErrMsg, setpassErrMsg] = useState("");
+  const [loading, setLoading] = useState(false);
   const { language } = myState;
+
+  const resetForm = () => {
+    setemail("");
+    setpassword("");
+  };
 
   const checkValidations = () => {
     let isValid = true;
@@ -54,7 +64,7 @@ const SignInScreen = ({ props, navigation }) => {
   };
 
   const loginWithEmailAndPassword = async () => {
-    // setLoading(true);
+    setLoading(true);
     // console.log(email, password);
     // const fcmToken = await Helper.getData("fcmToken");
     // dispatch(allActions.DataAction.ActivityModal(true));
@@ -62,13 +72,16 @@ const SignInScreen = ({ props, navigation }) => {
       await auth().signInWithEmailAndPassword(email.trim(), password);
       let user = auth().currentUser;
       const firebaseToken = await user.getIdToken();
-      console.log("firebase", firebaseToken);
-      return;
+      // console.log("firebase", firebaseToken);
+      // return;
       const { data, e } = await MindAxios.post(Env.createUrl("signin"), {
         firebase_token: firebaseToken,
-        device_name: "mobile",
+        email: email.trim(),
+        password: password,
+        // device_name: "mobile",
         // fcm_token: fcmToken,
       });
+      // console.log(data);
       const error = e?.response?.data;
       // console.log("data", error);
       // dispatch(allActions.DataAction.ActivityModal(false));
@@ -81,62 +94,65 @@ const SignInScreen = ({ props, navigation }) => {
         } = data;
         let { id, is_email_verified, first_name } = user;
         // console.log("user", user);
-        if (is_email_verified == 1) {
-          // console.log("user->", user);
-          // console.log("token->", token);
-          await Helper.setUser(user);
-          await Helper.storeData("loginMethod", "email");
-          await Helper.storeData("loginToken", token);
-          await Helper.storeData("userId", id.toString());
-          await Helper.storeData("homeToken", token);
-          // FINGER PRINT AUTH
-          let savedEmail = await Helper.getData("email");
-          if (savedEmail && savedEmail !== email) {
-            await AsyncStorage.removeItem("fingerPrintVAlidation");
-          } else {
-            await Helper.storeData("email", email);
-            await Helper.storeData("password", password);
-          }
-          // dispatch(allActions.DataAction.ActivityModal(false));
-          await Helper.showToastMessage("Welcome");
-          signIn(token);
-        } else {
-          let verifybody = {
-            email: email,
-            type: "EmailVerification",
-          };
+        // if (is_email_verified == 1) {
+        //   console.log(0);
+        // console.log("user->", user);
+        // console.log("token->", token);
+        await Helper.setUser(user);
+        await Helper.storeData("loginMethod", "email");
+        await Helper.storeData("loginToken", token);
+        await Helper.storeData("userId", id.toString());
+        await Helper.storeData("homeToken", token);
+        // FINGER PRINT AUTH
 
-          const res = await MindAxios.post(
-            Env.createUrl("emails/authentication"),
-            verifybody
-          );
-          // console.log("verify response-->", res);
-          if (res?.status == 200) {
-            await Helper.showToastMessage(language?.pleaseVerifyFirst);
-            await Helper.storeData("loginToken", token);
-            await Helper.storeData("userId", id.toString());
-            navigation.navigate("confirm", {
-              values: { email, id, firstName: first_name },
-            });
-          } else {
-            // dispatch(allActions.DataAction.ActivityModal(false));
-            const {
-              e: {
-                response: {
-                  data: { message },
-                },
-              },
-            } = res;
-            alert(message);
-          }
-        }
+        await Helper.storeData("email", email);
+        await Helper.storeData("password", password);
+        setLoading(false);
+        // dispatch(allActions.DataAction.ActivityModal(false));
+        // await Helper.showToastMessage("Welcome");
+        signIn(token);
+        navigation.replace("MainNavigator");
+
+        // } else {
+        //   // return;
+        //   let verifybody = {
+        //     email: email,
+        //     type: "EmailVerification",
+        //   };
+
+        //   const res = await MindAxios.post(
+        //     Env.createUrl("emails/authentication"),
+        //     verifybody
+        //   );
+        //   // console.log("verify response-->", res);
+        //   if (res?.status == 200) {
+        //     await Helper.showToastMessage(language?.pleaseVerifyFirst);
+        //     await Helper.storeData("loginToken", token);
+        //     await Helper.storeData("userId", id.toString());
+        //     navigation.navigate("confirm", {
+        //       values: { email, id, firstName: first_name },
+        //     });
+        //   } else {
+        //     // dispatch(allActions.DataAction.ActivityModal(false));
+        //     const {
+        //       e: {
+        //         response: {
+        //           data: { message },
+        //         },
+        //       },
+        //     } = res;
+        //     alert("fff " + message);
+        //   }
+        // }
       } else if (error) {
         // dispatch(allActions.DataAction.ActivityModal(false));
+        setLoading(false);
         alert(error?.message);
       }
     } catch (error) {
       // dispatch(allActions.DataAction.ActivityModal(false));
       // console.log("error", error);
+      setLoading(false);
       alert(error);
     }
   };
@@ -169,6 +185,7 @@ const SignInScreen = ({ props, navigation }) => {
           <Input
             value={email}
             onChangeText={(val) => setemail(val)}
+            placeholder={"Enter email"}
             style={styles.input}
           />
           {errMsg != "" && (
@@ -182,6 +199,7 @@ const SignInScreen = ({ props, navigation }) => {
           <Input
             value={password}
             onChangeText={(val) => setpassword(val)}
+            placeholder={"Enter Password"}
             style={styles.input}
           />
           {passErrMsg != "" && (
@@ -231,6 +249,7 @@ const SignInScreen = ({ props, navigation }) => {
           <Image source={require("../../Assets/Images/Ellipse.png")} />
         </View>
       </View>
+      {loading && <Loader text={"Signing In"} />}
     </View>
   );
 };

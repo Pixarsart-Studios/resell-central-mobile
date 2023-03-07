@@ -217,88 +217,88 @@ export const createProductData = [
 ];
 
 export const linkedPlatformsData = [
-    {
-      id: 1,
-      image: require("../resell-central-react-native/src/Assets/Images/mercariImage.png"),
-      name: "Mercari",
-      detail:
-        "Google drive allows users to store files on their servers, sync them across devices.",
-    },
-    {
-      id: 2,
-      image: require("../resell-central-react-native/src/Assets/Images/ebayImage.png"),
-      name: "Ebay",
-      detail:
-        "Google drive allows users to store files on their servers, sync them across devices.",
-    },
-    {
-      id: 3,
-      image: require("../resell-central-react-native/src/Assets/Images/googleDriveImage.png"),
-      name: "Google Drive",
-      detail:
-        "Google drive allows users to store files on their servers, sync them across devices.",
-    },
-    {
-      id: 4,
-      image: require("../resell-central-react-native/src/Assets/Images/depopImage.png"),
-      name: "Depop",
-      detail:
-        "Google drive allows users to store files on their servers, sync them across devices.",
-    },
-    {
-      id: 5,
-      image: require("../resell-central-react-native/src/Assets/Images/mySlabsImage.png"),
-      name: "My Slabs ",
-      detail:
-        "Google drive allows users to store files on their servers, sync them across devices.",
-    },
-    {
-      id: 6,
-      image: require("../resell-central-react-native/src/Assets/Images/poshMarkImage.png"),
-      name: "Poshmark ",
-      detail:
-        "Google drive allows users to store files on their servers, sync them across devices.",
-    },
-    {
-      id: 7,
-      image: require("../resell-central-react-native/src/Assets/Images/blackPoshMarkImage.png"),
-      name: "Poshmark ",
-      detail:
-        "Google drive allows users to store files on their servers, sync them across devices.",
-    },
-    {
-      id: 8,
-      image: require("../resell-central-react-native/src/Assets/Images/grailedImage.png"),
-      name: "Grailed",
-      detail:
-        "Google drive allows users to store files on their servers, sync them across devices.",
-    },
-    {
-      id: 9,
-      image: require("../resell-central-react-native/src/Assets/Images/aliasImage.png"),
-      name: "Alias: sell sneakers + apparel",
-      detail:
-        "Google drive allows users to store files on their servers, sync them across devices.",
-    },
-  ];
+  {
+    id: 1,
+    image: require("../resell-central-react-native/src/Assets/Images/mercarImage.png"),
+    name: "Mercari",
+    detail:
+      "Google drive allows users to store files on their servers, sync them across devices.",
+  },
+  {
+    id: 2,
+    image: require("../resell-central-react-native/src/Assets/Images/ebayImage.png"),
+    name: "Ebay",
+    detail:
+      "Google drive allows users to store files on their servers, sync them across devices.",
+  },
+  {
+    id: 3,
+    image: require("../resell-central-react-native/src/Assets/Images/googleDriveImage.png"),
+    name: "Google Drive",
+    detail:
+      "Google drive allows users to store files on their servers, sync them across devices.",
+  },
+  {
+    id: 4,
+    image: require("../resell-central-react-native/src/Assets/Images/depopImage.png"),
+    name: "Depop",
+    detail:
+      "Google drive allows users to store files on their servers, sync them across devices.",
+  },
+  {
+    id: 5,
+    image: require("../resell-central-react-native/src/Assets/Images/mySlabsImage.png"),
+    name: "My Slabs ",
+    detail:
+      "Google drive allows users to store files on their servers, sync them across devices.",
+  },
+  {
+    id: 6,
+    image: require("../resell-central-react-native/src/Assets/Images/poshMarkImage.png"),
+    name: "Poshmark ",
+    detail:
+      "Google drive allows users to store files on their servers, sync them across devices.",
+  },
+  {
+    id: 7,
+    image: require("../resell-central-react-native/src/Assets/Images/blackPoshMarkImage.png"),
+    name: "Poshmark ",
+    detail:
+      "Google drive allows users to store files on their servers, sync them across devices.",
+  },
+  {
+    id: 8,
+    image: require("../resell-central-react-native/src/Assets/Images/grailedImage.png"),
+    name: "Grailed",
+    detail:
+      "Google drive allows users to store files on their servers, sync them across devices.",
+  },
+  {
+    id: 9,
+    image: require("../resell-central-react-native/src/Assets/Images/aliasImage.png"),
+    name: "Alias: sell sneakers + apparel",
+    detail:
+      "Google drive allows users to store files on their servers, sync them across devices.",
+  },
+];
 
-  export const plansArray = [
-    {
-        id: 1,
-        planName: 'Premium Plan',
-        loreamIpsum: 'Lorem ipsum dolor sit amet ',
-        sumDolorSitAmet: 'Sum dolor sit amet',
-    },
-    {
-        id: 2,
-        planName: 'Starter',
-        loreamIpsum: 'Lorem ipsum dolor sit amet ',
-        sumDolorSitAmet: 'Sum dolor sit amet',
-    },
-    {
-        id: 3,
-        planName: 'Starter',
-        loreamIpsum: 'Lorem ipsum dolor sit amet ',
-        sumDolorSitAmet: 'Sum dolor sit amet',
-    },
-]
+export const plansArray = [
+  {
+    id: 1,
+    planName: "Premium Plan",
+    loreamIpsum: "Lorem ipsum dolor sit amet ",
+    sumDolorSitAmet: "Sum dolor sit amet",
+  },
+  {
+    id: 2,
+    planName: "Starter",
+    loreamIpsum: "Lorem ipsum dolor sit amet ",
+    sumDolorSitAmet: "Sum dolor sit amet",
+  },
+  {
+    id: 3,
+    planName: "Starter",
+    loreamIpsum: "Lorem ipsum dolor sit amet ",
+    sumDolorSitAmet: "Sum dolor sit amet",
+  },
+];
