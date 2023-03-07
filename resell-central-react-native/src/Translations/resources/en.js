@@ -137,7 +137,20 @@ export default {
     storeStaff: 'Store Staff',
     johnyBrook: 'Johny Brook',
     limitedAccess: 'Limited Access',    
-    SAVE: 'SAVE'
+    SAVE: 'SAVE',
+
+    addStaff: 'Add Staff',
+    permissions: 'Permissions',
+    loremIpsumDolorSitAmetConsecteturElementumAtConsecteturNunc: 'Lorem ipsum dolor sit amet consectetur. Elementum at consectetur nunc.',
+    dummy: 'Dummy',
+    home: 'Home',
+    orders: 'Orders',
+    editOrders: 'Edit Orders',
+    draftOrders: 'Draft Orders',
+    products: 'Products',
+    giftCards: 'Git Cards',
+    customers: 'Customers',
+    reports: 'Reports'
   },
   fr: {
     welcome: "nous sommes localisés maintenant",
