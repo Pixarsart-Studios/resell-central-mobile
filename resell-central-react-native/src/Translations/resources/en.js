@@ -127,6 +127,17 @@ export default {
     loremIpsumDolorSitAmet : 'Lorem ipsum dolor sit amet ',
     sumDolorSitAmet : 'Sum dolor sit amet ',
     getStarted: 'GET STARTED',
+    
+    userManagement : 'User Management',
+    storeOwner: 'Store Owner',
+    storeOwnerHaveSomePermissionsThatCantBeAssignedToStaff: "Store Owner have some permissions that can't be assigned to staff",
+    johnAlex: 'John Alex',
+    lastLoginStatus: 'Last login was on Monday, April 26, 2021, 1:06 am',
+    transferOwnerShip: 'TRANSFER OWNERSHIP',
+    storeStaff: 'Store Staff',
+    johnyBrook: 'Johny Brook',
+    limitedAccess: 'Limited Access',    
+    SAVE: 'SAVE'
   },
   fr: {
     welcome: "nous sommes localisés maintenant",
