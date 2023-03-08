@@ -22,6 +22,7 @@ import {
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#ffff",
   },
   childContainer: {
     height: hp("100%"),
@@ -103,7 +104,7 @@ export const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   termsAndConditionsAndButtonView: {
-    paddingTop: hp("20%"),
+    marginTop: hp(25),
   },
   tACPPText: {
     color: secondaryBlue,

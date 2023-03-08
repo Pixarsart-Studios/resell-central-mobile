@@ -39,21 +39,26 @@ const SignInScreen = ({ props, navigation }) => {
     let isValid = true;
     const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     var re = /^(?!.* )/;
-    if (!email) {
-      setErrMsgs("Email required");
+
+    if (email === "") {
+      setErrMsgs("Email is required");
       isValid = false;
     } else if (reg.test(email.trim()) == false) {
       console.log("comming here", email);
       setErrMsgs("Email is not valid");
       isValid = false;
+    } else {
+      setErrMsgs("");
     }
 
-    if (!password) {
+    if (password === "") {
       setpassErrMsg("Password is required");
       isValid = false;
     } else if (re.test(password) == false) {
       setpassErrMsg("Password is not valid");
       isValid = false;
+    } else {
+      setpassErrMsg("");
     }
 
     if (isValid) {
