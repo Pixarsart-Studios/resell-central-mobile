@@ -159,7 +159,11 @@ export default {
     taxValue: 'Tax Value',
     addAnotherCountry: 'ADD ANOTHER COUNTRY',
     saveChanges: 'SAVE CHANGES',
-    
+
+    notifications: 'Notifications',
+    notificationsTriggers: 'Notifications Triggers',
+    excepteurCulpaUtNostrudProidentNullaProidentEaAdDolorEuIdIncididuntProidentEsse: 'Excepteur culpa ut nostrud proident. Nulla proident ea ad dolor eu id incididunt proident esse.',
+    canceledOrders: 'Canceled Orders'
   },
   fr: {
     welcome: "nous sommes localisés maintenant",
