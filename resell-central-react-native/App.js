@@ -110,16 +110,16 @@ const App = () => {
   }, []);
 
   const authContext = {
-    // signIn: async (token) => {
-    //   try {
-    //     dispatch({
-    //       type: "SIGN_IN",
-    //       payload: token,
-    //     });
-    //   } catch (e) {
-    //     // console.log(e);
-    //   }
-    // },
+    signIn: async (token) => {
+      try {
+        dispatch({
+          type: "SIGN_IN",
+          payload: token,
+        });
+      } catch (e) {
+        console.log(e);
+      }
+    },
     // signOut: async () => {
     //   try {
     //     await AsyncStorage.removeItem("homeToken");

@@ -16,7 +16,7 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* MyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MyAppTests.m */; };
 		4E41018B64C14EFD82D204D6 /* ProximaNovaA-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8DA9087AFEE3419EB5F779E3 /* ProximaNovaA-Bold.otf */; };
-		524E90E129B763D000B3D78A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 524E90E029B763D000B3D78A /* GoogleService-Info.plist */; };
+		5292995929B7972B0012334E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5292995829B7972B0012334E /* GoogleService-Info.plist */; };
 		59815CE1EC0F4D4B802B59FD /* ProximaNova-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 279645E44E5240548808D725 /* ProximaNova-Light.ttf */; };
 		66A5CF20C33021EFEAC67EBF /* Pods_MyApp_MyAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB64A6CE19FC4EDFC7757614 /* Pods_MyApp_MyAppTests.framework */; };
 		8941E13F78FF4A43966F22EC /* ProximaNovaA-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25B5F80BEE734320AADBB4C4 /* ProximaNovaA-Thin.otf */; };
@@ -68,7 +68,7 @@
 		2F9E780CE724C60CB827C553 /* Pods-MyApp-MyAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp-MyAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MyApp-MyAppTests/Pods-MyApp-MyAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		48D79F1907F041EDAA2E4EA0 /* ProximaNova-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ProximaNova-Regular.ttf"; path = "../assets/fonts/ProximaNova-Regular.ttf"; sourceTree = "<group>"; };
 		4AE9565462AB8559382E2F0C /* Pods_MyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		524E90E029B763D000B3D78A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5292995829B7972B0012334E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8DA9087AFEE3419EB5F779E3 /* ProximaNovaA-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ProximaNovaA-Bold.otf"; path = "../assets/fonts/ProximaNovaA-Bold.otf"; sourceTree = "<group>"; };
 		968A20F8BD0245E30FBD22A5 /* Pods-MyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp.release.xcconfig"; path = "Target Support Files/Pods-MyApp/Pods-MyApp.release.xcconfig"; sourceTree = "<group>"; };
 		A8A496B83138A0046DC1D49A /* Pods-MyApp-MyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp-MyAppTests.release.xcconfig"; path = "Target Support Files/Pods-MyApp-MyAppTests/Pods-MyApp-MyAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				524E90E029B763D000B3D78A /* GoogleService-Info.plist */,
+				5292995829B7972B0012334E /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* MyApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* MyAppTests */,
@@ -366,7 +366,7 @@
 				8941E13F78FF4A43966F22EC /* ProximaNovaA-Thin.otf in Resources */,
 				BEF6FD5325814C728D789D04 /* ProximaNova-Black.ttf in Resources */,
 				CA3C846334194B38BADD43AF /* ProximaNova-Extrabold.ttf in Resources */,
-				524E90E129B763D000B3D78A /* GoogleService-Info.plist in Resources */,
+				5292995929B7972B0012334E /* GoogleService-Info.plist in Resources */,
 				59815CE1EC0F4D4B802B59FD /* ProximaNova-Light.ttf in Resources */,
 				015F9FE99A074B849776EE7B /* ProximaNova-Regular.ttf in Resources */,
 			);

@@ -4,6 +4,7 @@ import {
   StatusBar,
   Text,
   View,
+  Alert,
   ScrollView,
   TouchableOpacity,
 } from "react-native";
@@ -14,6 +15,9 @@ import AppFormField from "../../Components/Form/AppFormField";
 import AppFormSubmitButton from "@/Components/Form/AppFormSubmitButton";
 import Input from "@/Components/Input/Input";
 import { styles } from "./styles";
+import Env from "../../../api/Env";
+import auth from "@react-native-firebase/auth";
+import MindAxios from "../../../api/MindAxios";
 import CheckBox from "@react-native-community/checkbox";
 import { useFormikContext } from "formik";
 import {
@@ -24,32 +28,41 @@ import AuthContext from "@/Config/AuthContext";
 import MainHeader from "@/Components/MainHeader/MainHeader";
 
 export const validationSchema = Yup.object({}).shape({
-  firstName: Yup.string().required("FirstName is required").label("FirstName"),
-  lastName: Yup.string().required("LastName is required").label("LastName"),
-  // email: Yup.string()
-  //   .email("Please enter valid email")
-  //   .required("Email is required")
-  //   .label("Email"),
-  // password: Yup.string()
-  //   .matches(/\w*[a-z]\w*/, "Password must have a small letter")
-  //   .matches(/\w*[A-Z]\w*/, "Password must have a capital letter")
-  //   .matches(/\d/, "Password must have a number")
-  //   .min(8, ({ min }) => `Password must be at least ${min} characters`)
-  //   .required("Password is required")
-  //   .label("Password"),
-  // confirmPassword: Yup.string()
-  //   .oneOf([Yup.ref("password")], "Passwords do not match")
-  //   .required("Confirm password is required")
-  //   .label("Confirm Password"),
+  firstName: Yup.string().required("First name is required").label("FirstName"),
+  lastName: Yup.string().required("Last name is required").label("LastName"),
+  email: Yup.string()
+    .email("Please enter valid email")
+    .required("Email is required")
+    .label("Email"),
+  password: Yup.string()
+    .matches(/\w*[a-z]\w*/, "Password must have a small letter")
+    // .matches(/\w*[A-Z]\w*/, "Password must have a capital letter")
+    .matches(/\d/, "Password must have a number")
+    .min(8, ({ min }) => `Password must be at least ${min} characters`)
+    .required("Password is required")
+    .label("Password"),
+  confirmPassword: Yup.string()
+    .oneOf([Yup.ref("password")], "Passwords do not match")
+    .required("Confirm password is required")
+    .label("Confirm Password"),
 });
 
 const SignUpScreen = ({ navigation }) => {
   const { myState } = useContext(AuthContext);
   const { language } = myState;
+  const [agree, setAgree] = useState(true);
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={"#FFFFFF"} />
+      <MainHeader onPress={() => navigation?.goBack()} back={language?.back} />
+      <View style={[styles.logoContainer, { paddingBottom: 30 }]}>
+        <Image
+          resizeMode="contain"
+          style={styles.logo}
+          source={require("../../Assets/Images/Frame.png")}
+        />
+      </View>
       <ScrollView style={styles.childContainer}>
         <AppForm
           initialValues={{
@@ -60,19 +73,15 @@ const SignUpScreen = ({ navigation }) => {
             confirmPassword: "",
           }}
           validationSchema={validationSchema}
-          onSubmit={() => navigation.navigate("OtpScreen")}
+          onSubmit={(values, { resetForm }) => {
+            if (!agree) {
+              Alert.alert("", "Please agree to the terms and conditions!");
+            } else {
+              console.log(values);
+              // registerWithEmailAndPassword(values, resetForm);
+            }
+          }}
         >
-          <MainHeader
-            onPress={() => navigation?.goBack()}
-            back={language?.back}
-          />
-          <View style={styles.logoContainer}>
-            <Image
-              resizeMode="contain"
-              style={styles.logo}
-              source={require("../../Assets/Images/Frame.png")}
-            />
-          </View>
           <View style={styles.heading}>
             <Text style={styles.headingText}>{language?.createYour}</Text>
             <Text style={styles.headingText}>{language?.account}</Text>
@@ -134,6 +143,7 @@ const SignUpScreen = ({ navigation }) => {
               textContentType="password"
             />
           </View>
+          {/* <View style={{ height: 40, backgroundColor: "red" }} /> */}
           <View style={styles.termsAndConditionsAndButtonView}>
             <View style={styles.checkboxContainer}>
               <View style={styles.optionStyle}>
@@ -172,11 +182,11 @@ const SignUpScreen = ({ navigation }) => {
             />
           </View>
         </View>
-        <Image
-          style={styles.ellipse}
-          source={require("../../Assets/Images/Ellipse.png")}
-        />
       </ScrollView>
+      <Image
+        style={styles.ellipse}
+        source={require("../../Assets/Images/Ellipse.png")}
+      />
     </View>
   );
 };

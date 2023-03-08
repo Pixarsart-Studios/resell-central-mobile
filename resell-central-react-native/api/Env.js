@@ -1,5 +1,5 @@
 // development url:
-const baseUrl = "http://resell-central/api/";
+const baseUrl = "http://3.22.119.41/";
 // live url:
 // const baseUrl = "https://api.stampbox.com/";
 
