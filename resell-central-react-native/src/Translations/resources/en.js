@@ -163,7 +163,19 @@ export default {
     notifications: 'Notifications',
     notificationsTriggers: 'Notifications Triggers',
     excepteurCulpaUtNostrudProidentNullaProidentEaAdDolorEuIdIncididuntProidentEsse: 'Excepteur culpa ut nostrud proident. Nulla proident ea ad dolor eu id incididunt proident esse.',
-    canceledOrders: 'Canceled Orders'
+    canceledOrders: 'Canceled Orders',
+
+    storeLanguages: 'Store Languages',
+    defaultLanguage: 'Default Language',
+    selectLanguage: 'Select Language',
+    addOtherLanguagesToStore: 'Add other Languages To Store',
+    arabic: 'Arabic',
+    french: 'French',
+    spanish: 'Spanish',
+    russian: 'Russian',
+    german: 'German',
+    polish: 'Polish',
+
   },
   fr: {
     welcome: "nous sommes localisés maintenant",
