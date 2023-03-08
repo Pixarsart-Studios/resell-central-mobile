@@ -1,18 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const slice = createSlice({
-  name: 'data',
-  initialState: { test: null },
+  name: "data",
+  initialState: { currentUser: null },
   reducers: {
-    changeData: (state, { payload: { test } }) => {
-      if (typeof test !== 'undefined') {
-        state.test = test
+    changeData: (state, payload) => {
+      // console.log(payload?.payload?.result);
+      if (typeof payload !== "undefined") {
+        state.currentUser = payload?.payload?.result.user;
       }
     },
-    
   },
-})
+});
 
-export const { changeData } = slice.actions
+export const { changeData } = slice.actions;
 
-export default slice.reducer
+export default slice.reducer;

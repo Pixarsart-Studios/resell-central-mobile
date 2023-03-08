@@ -26,6 +26,8 @@ import {
 } from "react-native-responsive-screen";
 import AuthContext from "@/Config/AuthContext";
 import MainHeader from "@/Components/MainHeader/MainHeader";
+import Loader from "@/Components/Loader/Loader";
+import Helper from "@/Helper";
 
 export const validationSchema = Yup.object({}).shape({
   firstName: Yup.string().required("First name is required").label("FirstName"),
@@ -51,7 +53,96 @@ const SignUpScreen = ({ navigation }) => {
   const { myState } = useContext(AuthContext);
   const { language } = myState;
   const [agree, setAgree] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
+
+  const handleConfirm = async (values, reset) => {
+    // dispatch(allActions.DataAction.AppLoader(true));
+    setLoading(true);
+    try {
+      await auth().createUserWithEmailAndPassword(
+        values.email,
+        values.password
+      );
+      await goto(values, reset);
+      // await auth().currentUser.sendEmailVerification();
+      // const user = auth().currentUser;
+    } catch (error) {
+      // console.log("error", error);
+      // dispatch(allActions.DataAction.AppLoader(false));
+      setLoading(false);
+      alert(error);
+      // setCheck(false);
+    }
+  };
+
+  const goto = async (values, reset) => {
+    // dispatch(allActions.DataAction.ActivityModal(false));
+    const user = auth().currentUser;
+    let uid = user?._user?.uid;
+    console.log("uid here", user?._user?.uid);
+    const firebaseToken = await user.getIdToken();
+    // const fcmToken = await Helper.getData("fcmToken");
+    // let getAddress = address?.address?.address ? address?.address : null;
+    // let my_address = getAddress !== null ? JSON.stringify(getAddress) : null;
+    const body = {
+      // firebase_token: firebaseToken,
+      name: values?.firstName,
+      last_name: values?.lastName,
+      email: values?.email,
+      phone: values?.phone,
+      password: values?.password,
+      password_confirmation: values?.confirmPassword,
+      uid: uid,
+      // username: values?.userName,
+      // fcm_token: fcmToken,
+      // device_name: "mobile",
+      // is_email_verified: 0,
+    };
+    console.log("body-->", body);
+    try {
+      const response = await MindAxios.register(Env.createUrl("signup"), body);
+      console.log("response-->", response);
+      if (response?.status == 200) {
+        let result = response?.data?.request?.payload;
+        let token = result?.token;
+        let id = result?.user?.id;
+        // await Helper.storeData("loginToken", token);
+        // await Helper.storeData("userId", id.toString());
+        console.log("result", result);
+        // let appendVal = Helper.deepCopy(values);
+        // appendVal.address = address?.address?.address ? address?.address : null;
+        // appendVal.dob = dob;
+        // appendVal.gender = gender;
+        // appendVal.language = selectedLang;
+        // appendVal.id = id;
+        // appendVal.token = token;
+        // dispatch(allActions.DataAction.User(appendVal));
+        // let sendParams = { email: values?.email, id, token };
+        reset();
+        setLoading(false);
+        navigation?.goBack();
+        // dispatch(allActions.DataAction.AppLoader(false));
+        // navigation.navigate("confirm", { values: appendVal });
+      } else {
+        // dispatch(allActions.DataAction.AppLoader(false));
+        const {
+          e: {
+            response: {
+              data: { message },
+            },
+          },
+        } = response;
+        setLoading(false);
+        alert(message);
+      }
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+      alert(error);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={"#FFFFFF"} />
@@ -78,6 +169,7 @@ const SignUpScreen = ({ navigation }) => {
               Alert.alert("", "Please agree to the terms and conditions!");
             } else {
               console.log(values);
+              handleConfirm(values, resetForm);
               // registerWithEmailAndPassword(values, resetForm);
             }
           }}
@@ -121,6 +213,17 @@ const SignUpScreen = ({ navigation }) => {
               autoCompleteType="email"
               keyboardType="email-address"
               textContentType="emailAddress"
+            />
+            <View style={styles.labelView}>
+              <Text style={styles.labelText}>{"Phone No."}</Text>
+            </View>
+            <Field
+              style={styles.input}
+              component={AppFormField}
+              name="phone"
+              autoCompleteType="phone"
+              keyboardType="phone-pad"
+              textContentType="phone"
             />
             <View style={styles.labelView}>
               <Text style={styles.labelText}>{language?.password}</Text>
@@ -187,6 +290,7 @@ const SignUpScreen = ({ navigation }) => {
         style={styles.ellipse}
         source={require("../../Assets/Images/Ellipse.png")}
       />
+      {loading && <Loader text={"Signing up"} />}
     </View>
   );
 };

@@ -15,6 +15,18 @@ let config = async () => {
     },
   };
 };
+
+let registerConfig = async (token) => {
+  // let token = await Helpers.getData("loginToken");
+  // console.log("token", token);
+  return {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: "application/json",
+    },
+  };
+};
+
 let formdataConfig = async () => {
   let token = await Helpers.getData("loginToken");
   return {
@@ -49,6 +61,17 @@ export default {
     console.log("url", url);
     try {
       let res = await axios.post(url, data, await config());
+      return res;
+    } catch (e) {
+      // console.log("error-->", {e})
+      return { e };
+    }
+  },
+  register: async (url, data) => {
+    console.log("url", url);
+    // console.log("token", token);
+    try {
+      let res = await axios.post(url, data);
       return res;
     } catch (e) {
       // console.log("error-->", {e})

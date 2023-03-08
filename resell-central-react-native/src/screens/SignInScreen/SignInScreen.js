@@ -17,14 +17,16 @@ import { useTranslation } from "react-i18next";
 import AuthContext from "@/Config/AuthContext";
 import Helper from "@/Helper";
 import Loader from "@/Components/Loader/Loader";
-
+import { useDispatch, useSelector } from "react-redux";
+import { changeData } from "@/Store/Data";
 // Helper
 const SignInScreen = ({ props, navigation }) => {
   const { t } = useTranslation();
   const { signIn } = useContext(AuthContext);
   const { myState } = useContext(AuthContext);
-  const [email, setemail] = useState("");
-  const [password, setpassword] = useState("");
+  const dispatch = useDispatch();
+  const [email, setemail] = useState("azam@pixarsart.com");
+  const [password, setpassword] = useState("qwerty123");
   const [errMsg, setErrMsgs] = useState("");
   const [passErrMsg, setpassErrMsg] = useState("");
   const [loading, setLoading] = useState(false);
@@ -70,9 +72,7 @@ const SignInScreen = ({ props, navigation }) => {
 
   const loginWithEmailAndPassword = async () => {
     setLoading(true);
-    // console.log(email, password);
     // const fcmToken = await Helper.getData("fcmToken");
-    // dispatch(allActions.DataAction.ActivityModal(true));
     try {
       await auth().signInWithEmailAndPassword(email.trim(), password);
       let user = auth().currentUser;
@@ -89,7 +89,6 @@ const SignInScreen = ({ props, navigation }) => {
       // console.log(data);
       const error = e?.response?.data;
       // console.log("data", error);
-      // dispatch(allActions.DataAction.ActivityModal(false));
       if (data?.success) {
         // resetForm();
         // let token = data?.result?.token;
@@ -113,8 +112,7 @@ const SignInScreen = ({ props, navigation }) => {
         await Helper.storeData("email", email);
         await Helper.storeData("password", password);
         setLoading(false);
-        // dispatch(allActions.DataAction.ActivityModal(false));
-        // await Helper.showToastMessage("Welcome");
+        dispatch(changeData(data));
         signIn(token);
         navigation.replace("MainNavigator");
 
@@ -150,12 +148,10 @@ const SignInScreen = ({ props, navigation }) => {
         //   }
         // }
       } else if (error) {
-        // dispatch(allActions.DataAction.ActivityModal(false));
         setLoading(false);
         alert(error?.message);
       }
     } catch (error) {
-      // dispatch(allActions.DataAction.ActivityModal(false));
       // console.log("error", error);
       setLoading(false);
       alert(error);

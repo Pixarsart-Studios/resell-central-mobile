@@ -15,10 +15,12 @@ import {
 import { api } from "@/Services/api";
 import theme from "./Theme";
 import data from "./Data";
+import loader from "./Loader";
 
 const reducers = combineReducers({
   theme,
   data,
+  loader,
   api: api.reducer,
 });
 
