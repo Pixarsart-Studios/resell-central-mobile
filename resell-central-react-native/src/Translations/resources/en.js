@@ -176,6 +176,19 @@ export default {
     german: 'German',
     polish: 'Polish',
 
+    emailAddress: 'Email Address',
+    status: 'Status',
+    sales: 'Sales',
+    active: 'Active',
+    inActive: 'Inactive',
+    infoEmail: 'info@resellcentral.com',
+    freeShipping: 'Free Shipping',
+    endOfSeason: 'End of Season',
+    flatOff: 'Flat 50% off',
+    query: 'Query',
+    supportEmail: 'support@resellcentral.com'
+    
+
   },
   fr: {
     welcome: "nous sommes localisés maintenant",

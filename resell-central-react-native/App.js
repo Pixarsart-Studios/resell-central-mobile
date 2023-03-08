@@ -14,7 +14,6 @@ import Accounting from "@/screens/Accounting/Accounting";
 import AuthStack from "@/Navigators/Application";
 import AddProduct from "@/screens/AddProduct/AddProduct";
 import CreateProduct from "@/screens/CreateProduct/CreateProduct";
-import StoreLanguges from "@/screens/StoreLanguages/StoreLanguges";
 // import  from '@react-native-async-storage/async-storage/jest/async-storage-mock'
 
 const reducer = (prevState, action) => {
@@ -154,9 +153,7 @@ const App = () => {
       <Provider store={store}>
         <NavigationContainer>
           <PersistGate loading={null} persistor={persistor}>
-            {/* <Root /> */}
-            {/* <DrawerNavigation /> */}
-            <StoreLanguges />
+            <Root />
           </PersistGate>
         </NavigationContainer>
       </Provider>
