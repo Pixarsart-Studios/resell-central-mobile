@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>MyApp-tvOS.xcscheme_^#shared#^_</key>
+		<key>ResellCentral-tvOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>65</integer>
 		</dict>
-		<key>MyApp.xcscheme_^#shared#^_</key>
+		<key>ResellCentral.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
