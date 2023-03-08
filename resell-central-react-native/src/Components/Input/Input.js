@@ -18,8 +18,8 @@ const Input = ({
         placeholder={placeholder}
         value={value}
         onChangeText={onChangeText}
-        style={style}
-      />
+        style={[style, {paddingLeft: 18}]}
+        />
     </View>
   );
 };
