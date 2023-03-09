@@ -146,6 +146,7 @@ const App = () => {
   };
 
   return (
+    
     <AuthContext.Provider value={authContext}>
       <Provider store={store}>
         <NavigationContainer>

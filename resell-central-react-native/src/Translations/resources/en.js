@@ -86,6 +86,23 @@ export default {
 
 
 
+    /////Manage Orders
+    manageOrders: 'Manage Orders',
+    search : 'Search',
+    all: 'All',
+    shipped: 'Shipped',
+    pending: 'Pending',
+    canceled: 'Canceled',
+    appleJuiced: 'Apple Juiced',
+    orderOn : 'Order on: Jan 23, 2023',
+    qty: 'Qty: 04',
+    filters: 'Filters',
+    date: 'Date',
+    searchByCategory: 'Seach by Category',
+    searchProducts: 'SEARCH PRODUCTS',
+
+
+
 
     ///// Settings
     settings: 'Settings',
