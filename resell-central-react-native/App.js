@@ -10,10 +10,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import AuthContext from "./src/Config/AuthContext";
 import { useReducer } from "react";
 import Languages from "./src/Translations/resources/en";
-import Accounting from "@/screens/Accounting/Accounting";
 import AuthStack from "@/Navigators/Application";
-import AddProduct from "@/screens/AddProduct/AddProduct";
-import CreateProduct from "@/screens/CreateProduct/CreateProduct";
 // import  from '@react-native-async-storage/async-storage/jest/async-storage-mock'
 
 const reducer = (prevState, action) => {

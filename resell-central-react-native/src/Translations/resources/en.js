@@ -186,7 +186,17 @@ export default {
     endOfSeason: 'End of Season',
     flatOff: 'Flat 50% off',
     query: 'Query',
-    supportEmail: 'support@resellcentral.com'
+    supportEmail: 'support@resellcentral.com',
+
+
+    createEmailTemplate: 'Create Email Template',
+    emailTemplate: 'Email Template',
+    title: 'Title',
+    trigger: 'Trigger',
+    tags: 'Tags',
+    resellCentralCom: '@resellCetral.com',
+    saveEmailTemplate: 'Save Email Template',
+    
     
 
   },
