@@ -20,8 +20,12 @@ import {
   proximaNovaBold,
   proximaNovaRegular,
 } from "@/Constants/Fonts";
+import { useSelector } from "react-redux";
 
 const Dashboard = (props) => {
+  const currentUser = useSelector((state) => state.data.currentUser);
+  // console.log("current user here --- > ", currentUser);
+
   return (
     <SafeAreaView>
       <MainHeader
