@@ -176,6 +176,29 @@ export default {
     german: 'German',
     polish: 'Polish',
 
+    emailAddress: 'Email Address',
+    status: 'Status',
+    sales: 'Sales',
+    active: 'Active',
+    inActive: 'Inactive',
+    infoEmail: 'info@resellcentral.com',
+    freeShipping: 'Free Shipping',
+    endOfSeason: 'End of Season',
+    flatOff: 'Flat 50% off',
+    query: 'Query',
+    supportEmail: 'support@resellcentral.com',
+
+
+    createEmailTemplate: 'Create Email Template',
+    emailTemplate: 'Email Template',
+    title: 'Title',
+    trigger: 'Trigger',
+    tags: 'Tags',
+    resellCentralCom: '@resellCetral.com',
+    saveEmailTemplate: 'Save Email Template',
+    
+    
+
   },
   fr: {
     welcome: "nous sommes localisés maintenant",

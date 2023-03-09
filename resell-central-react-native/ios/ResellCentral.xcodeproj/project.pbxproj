@@ -417,7 +417,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		4154A44C19B9C3D1A50BAB06 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
