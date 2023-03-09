@@ -152,7 +152,7 @@ const SignInScreen = ({ props, navigation }) => {
         alert(error?.message);
       }
     } catch (error) {
-      // console.log("error", error);
+      console.log("error", error);
       setLoading(false);
       alert(error);
     }
