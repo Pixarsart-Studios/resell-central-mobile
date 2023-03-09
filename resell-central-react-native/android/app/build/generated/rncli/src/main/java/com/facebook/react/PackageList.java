@@ -11,22 +11,34 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
+// @baronha/react-native-multiple-image-picker
+import com.reactnativemultipleimagepicker.MultipleImagePickerPackage;
 // @react-native-async-storage/async-storage
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 // @react-native-community/checkbox
 import com.reactnativecommunity.checkbox.ReactCheckBoxPackage;
+// @react-native-firebase/app
+import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
+// @react-native-firebase/auth
+import io.invertase.firebase.auth.ReactNativeFirebaseAuthPackage;
+// @react-native-firebase/database
+import io.invertase.firebase.database.ReactNativeFirebaseDatabasePackage;
 // @react-native-masked-view/masked-view
 import org.reactnative.maskedview.RNCMaskedViewPackage;
-// react-native-flipper
-import com.facebook.flipper.reactnative.FlipperPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
+// react-native-linear-gradient
+import com.BV.LinearGradient.LinearGradientPackage;
+// react-native-localization
+import com.babisoft.ReactNativeLocalization.ReactNativeLocalizationPackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-safe-area-context
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 // react-native-screens
 import com.swmansion.rnscreens.RNScreensPackage;
+// react-native-svg
+import com.horcrux.svg.SvgPackage;
 // react-native-vector-icons
 import com.oblador.vectoricons.VectorIconsPackage;
 
@@ -74,14 +86,20 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
+      new MultipleImagePickerPackage(),
       new AsyncStoragePackage(),
       new ReactCheckBoxPackage(),
+      new ReactNativeFirebaseAppPackage(),
+      new ReactNativeFirebaseAuthPackage(),
+      new ReactNativeFirebaseDatabasePackage(),
       new RNCMaskedViewPackage(),
-      new FlipperPackage(),
       new RNGestureHandlerPackage(),
+      new LinearGradientPackage(),
+      new ReactNativeLocalizationPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
+      new SvgPackage(),
       new VectorIconsPackage()
     ));
   }
