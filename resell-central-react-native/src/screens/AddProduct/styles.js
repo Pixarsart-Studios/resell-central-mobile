@@ -30,6 +30,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: bgLightGrey,
     borderRadius: 5,
+    flexDirection: "row",
   },
   childContainer: {
     height: hp("100%"),

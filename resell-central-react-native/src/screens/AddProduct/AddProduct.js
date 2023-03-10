@@ -13,8 +13,9 @@ import Input from "@/Components/Input/Input";
 import Button from "@/Components/Button/Button";
 import { styles } from "./styles";
 import MainHeader from "@/Components/MainHeader/MainHeader";
+import DropDown from "../../Components/DropDown/Dropdown";
 import AuthContext from "@/Config/AuthContext";
-import SelectDropdown from "react-native-select-dropdown";
+import { widthPercentageToDP } from "react-native-responsive-screen";
 
 const category = ["shirt", "pent"];
 
@@ -44,31 +45,7 @@ const AddProduct = ({ navigation }) => {
         </View>
         <View style={styles.inputContainer}>
           {/* <Input style={styles.input} /> */}
-          <SelectDropdown
-            defaultButtonText="."
-            buttonStyle={styles.btn}
-            data={category}
-            onSelect={(selectedItem, index) => {
-              console.log(selectedItem, index);
-            }}
-            buttonTextAfterSelection={(selectedItem, index) => {
-              return selectedItem;
-            }}
-            rowTextForSelection={(item, index) => {
-              return item;
-            }}
-          />
-          {/* <Image
-            style={{
-              height: 10,
-              width: 10,
-              position: "absolute",
-              right: "12%",
-              top: "20%",
-            }}
-            source={require("../../Assets/Images/angleDown.png")}
-            resizeMode="contain"
-          /> */}
+          <DropDown array={category} />
           <View style={styles.selectConditoinsLableView}>
             <Text style={styles.selectConditoinsLabelText}>
               {language?.selectContion}
