@@ -39,7 +39,7 @@ const Loader = ({ text }) => {
       <View
         style={{
           width: wp(45),
-          height: hp(15),
+          height: "17%",
           alignItems: "center",
           justifyContent: "center",
           backgroundColor: "#F2F2F2",

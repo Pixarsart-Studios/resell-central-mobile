@@ -110,14 +110,15 @@ const DrawerNavigation = () => {
       <Drawer.Screen
         options={{
           headerShown: false,
-          drawerIcon: ({ color }) => (
+          drawerIcon: ({ color, focused }) => (
             <Image
               source={require("../Assets/Images/dashboardIcon.png")}
               style={{
                 height: 20,
                 width: 20,
                 tintColor: color,
-                marginLeft: 12,
+                marginLeft: focused ? 25 : 12,
+                // paddingLeft: focused ? 15 : 0,
               }}
             />
           ),
@@ -128,14 +129,14 @@ const DrawerNavigation = () => {
       <Drawer.Screen
         options={{
           headerShown: false,
-          drawerIcon: ({ color }) => (
+          drawerIcon: ({ color, focused }) => (
             <Image
               source={require("../Assets/Images/categoryIcon.png")}
               style={{
                 height: 20,
                 width: 20,
                 tintColor: color,
-                marginLeft: 12,
+                marginLeft: focused ? 25 : 12,
               }}
             />
           ),
@@ -146,14 +147,14 @@ const DrawerNavigation = () => {
       <Drawer.Screen
         options={{
           headerShown: false,
-          drawerIcon: ({ color }) => (
+          drawerIcon: ({ color, focused }) => (
             <Image
               source={require("../Assets/Images/collectionIcon.png")}
               style={{
                 height: 20,
                 width: 20,
                 tintColor: color,
-                marginLeft: 12,
+                marginLeft: focused ? 25 : 12,
               }}
             />
           ),
@@ -164,14 +165,14 @@ const DrawerNavigation = () => {
       <Drawer.Screen
         options={{
           headerShown: false,
-          drawerIcon: ({ color }) => (
+          drawerIcon: ({ color, focused }) => (
             <Image
               source={require("../Assets/Images/addProductIcon.png")}
               style={{
                 height: 20,
                 width: 20,
                 tintColor: color,
-                marginLeft: 12,
+                marginLeft: focused ? 25 : 12,
               }}
             />
           ),
@@ -182,14 +183,14 @@ const DrawerNavigation = () => {
       <Drawer.Screen
         options={{
           headerShown: false,
-          drawerIcon: ({ color }) => (
+          drawerIcon: ({ color, focused }) => (
             <Image
               source={require("../Assets/Images/inventoryIcon.png")}
               style={{
                 height: 20,
                 width: 20,
                 tintColor: color,
-                marginLeft: 12,
+                marginLeft: focused ? 25 : 12,
               }}
             />
           ),
@@ -200,14 +201,14 @@ const DrawerNavigation = () => {
       <Drawer.Screen
         options={{
           headerShown: false,
-          drawerIcon: ({ color }) => (
+          drawerIcon: ({ color, focused }) => (
             <Image
               source={require("../Assets/Images/inventoryAlerts.png")}
               style={{
                 height: 20,
                 width: 20,
                 tintColor: color,
-                marginLeft: 12,
+                marginLeft: focused ? 25 : 12,
               }}
             />
           ),
@@ -218,14 +219,14 @@ const DrawerNavigation = () => {
       <Drawer.Screen
         options={{
           headerShown: false,
-          drawerIcon: ({ color }) => (
+          drawerIcon: ({ color, focused }) => (
             <Image
               source={require("../Assets/Images/manageOrdersIcon.png")}
               style={{
-                height: 20,
+                height: 23.5,
                 width: 20,
                 tintColor: color,
-                marginLeft: 12,
+                marginLeft: focused ? 25 : 12,
               }}
             />
           ),
@@ -236,14 +237,14 @@ const DrawerNavigation = () => {
       <Drawer.Screen
         options={{
           headerShown: false,
-          drawerIcon: ({ color }) => (
+          drawerIcon: ({ color, focused }) => (
             <Image
               source={require("../Assets/Images/manageReturns.png")}
               style={{
                 height: 20,
                 width: 20,
                 tintColor: color,
-                marginLeft: 12,
+                marginLeft: focused ? 25 : 12,
               }}
             />
           ),
@@ -254,14 +255,14 @@ const DrawerNavigation = () => {
       <Drawer.Screen
         options={{
           headerShown: false,
-          drawerIcon: ({ color }) => (
+          drawerIcon: ({ color, focused }) => (
             <Image
               source={require("../Assets/Images/accountingIcon.png")}
               style={{
                 height: 20,
                 width: 20,
                 tintColor: color,
-                marginLeft: 12,
+                marginLeft: focused ? 25 : 12,
               }}
             />
           ),
@@ -272,14 +273,14 @@ const DrawerNavigation = () => {
       <Drawer.Screen
         options={{
           headerShown: false,
-          drawerIcon: ({ color }) => (
+          drawerIcon: ({ color, focused }) => (
             <Image
               source={require("../Assets/Images/settingsIcon.png")}
               style={{
                 height: 20,
                 width: 20,
                 tintColor: color,
-                marginLeft: 12,
+                marginLeft: focused ? 25 : 12,
               }}
             />
           ),

@@ -23,6 +23,15 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  btn: {
+    backgroundColor: bgWhite,
+    height: 48,
+    width: "100%",
+    borderWidth: 1,
+    borderColor: bgLightGrey,
+    borderRadius: 5,
+    flexDirection: "row",
+  },
   childContainer: {
     height: hp("100%"),
     width: wp("100%"),

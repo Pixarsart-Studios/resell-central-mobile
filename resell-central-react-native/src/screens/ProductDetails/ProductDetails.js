@@ -83,6 +83,7 @@ const ProductDetails = () => {
       <MainHeader back={"BACK"} heading="Product Details" />
       <ScrollView>
         <Image
+          onPress={() => props?.navigation?.goBack()}
           resizeMode="contain"
           source={require("../../Assets/Images/ProductImage.png")}
           style={styles.image}

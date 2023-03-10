@@ -69,6 +69,7 @@
 		48D79F1907F041EDAA2E4EA0 /* ProximaNova-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ProximaNova-Regular.ttf"; path = "../assets/fonts/ProximaNova-Regular.ttf"; sourceTree = "<group>"; };
 		4AE9565462AB8559382E2F0C /* Pods_ResellCentral.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ResellCentral.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5292995829B7972B0012334E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		52E9C87729BB5066006017B3 /* ResellCentral.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = ResellCentral.entitlements; path = ResellCentral/ResellCentral.entitlements; sourceTree = "<group>"; };
 		8DA9087AFEE3419EB5F779E3 /* ProximaNovaA-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ProximaNovaA-Bold.otf"; path = "../assets/fonts/ProximaNovaA-Bold.otf"; sourceTree = "<group>"; };
 		968A20F8BD0245E30FBD22A5 /* Pods-ResellCentral.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResellCentral.release.xcconfig"; path = "Target Support Files/Pods-ResellCentral/Pods-ResellCentral.release.xcconfig"; sourceTree = "<group>"; };
 		A8A496B83138A0046DC1D49A /* Pods-ResellCentral-ResellCentralTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResellCentral-ResellCentralTests.release.xcconfig"; path = "Target Support Files/Pods-ResellCentral-ResellCentralTests/Pods-ResellCentral-ResellCentralTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +137,7 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
+				52E9C87729BB5066006017B3 /* ResellCentral.entitlements */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				FA7919D329B657C60051D082 /* LaunchScreen.storyboard */,

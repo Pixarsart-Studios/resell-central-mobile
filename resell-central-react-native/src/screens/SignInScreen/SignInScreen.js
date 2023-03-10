@@ -77,7 +77,7 @@ const SignInScreen = ({ props, navigation }) => {
       await auth().signInWithEmailAndPassword(email.trim(), password);
       let user = auth().currentUser;
       const firebaseToken = await user.getIdToken();
-      // console.log("firebase", firebaseToken);
+      console.log("firebase", firebaseToken);
       // return;
       const { data, e } = await MindAxios.post(Env.createUrl("signin"), {
         firebase_token: firebaseToken,

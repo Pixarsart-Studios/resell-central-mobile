@@ -13,7 +13,12 @@ import Input from "@/Components/Input/Input";
 import Button from "@/Components/Button/Button";
 import { styles } from "./styles";
 import MainHeader from "@/Components/MainHeader/MainHeader";
+import DropDown from "../../Components/DropDown/Dropdown";
 import AuthContext from "@/Config/AuthContext";
+import { widthPercentageToDP } from "react-native-responsive-screen";
+
+const category = ["shirt", "pent"];
+
 const AddProduct = ({ navigation }) => {
   const { myState } = useContext(AuthContext);
   const { language } = myState;
@@ -39,18 +44,8 @@ const AddProduct = ({ navigation }) => {
           </Text>
         </View>
         <View style={styles.inputContainer}>
-          <Input style={styles.input} />
-          <Image
-            style={{
-              height: 10,
-              width: 10,
-              position: "absolute",
-              right: "12%",
-              top: "20%",
-            }}
-            source={require("../../Assets/Images/angleDown.png")}
-            resizeMode="contain"
-          />
+          {/* <Input style={styles.input} /> */}
+          <DropDown array={category} />
           <View style={styles.selectConditoinsLableView}>
             <Text style={styles.selectConditoinsLabelText}>
               {language?.selectContion}

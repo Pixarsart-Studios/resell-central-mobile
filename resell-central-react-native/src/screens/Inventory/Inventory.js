@@ -52,7 +52,12 @@ const Inventory = (props) => {
       <ScrollView>
         {DummyData.map((item, index) => {
           return (
-            <TouchableOpacity style={styles.item}>
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate("ProductDetails");
+              }}
+              style={styles.item}
+            >
               <View style={styles.itemView}>
                 <Image
                   style={styles.image}
@@ -111,7 +116,12 @@ const Inventory = (props) => {
         </View>
         {DummyData.map((item, index) => {
           return (
-            <TouchableOpacity style={styles.item}>
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate("ProductDetails");
+              }}
+              style={styles.item}
+            >
               <View style={styles.itemView}>
                 <Image
                   style={styles.image}
@@ -197,12 +207,7 @@ const Inventory = (props) => {
           </View>
         </Modal>
       </View>
-      <TouchableOpacity
-        onPress={() => {
-          props.navigation.navigate("ProductDetails");
-        }}
-        style={styles.floatingButtonView}
-      >
+      <TouchableOpacity style={styles.floatingButtonView}>
         <Image
           style={styles.floatingButton}
           source={require("../../Assets/Images/floatingButtonImage.png")}
