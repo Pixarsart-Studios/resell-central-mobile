@@ -1,4 +1,13 @@
-import { bgLightGrey, bgWhite, mainBlue, primaryButton, textDarkGrey, textError, textSuccess, textValidation } from "@/Constants/Colors";
+import {
+  bgLightGrey,
+  bgWhite,
+  mainBlue,
+  primaryButton,
+  textDarkGrey,
+  textError,
+  textSuccess,
+  textValidation,
+} from "@/Constants/Colors";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -53,11 +62,9 @@ export const styles = StyleSheet.create({
     backgroundColor: textDarkGrey,
     marginLeft: 24,
     marginTop: 8,
-    marginRight:24
+    marginRight: 24,
   },
-  item: {
-   
-  },
+  item: {},
   itemView: {
     flexDirection: "row",
     borderRadius: 5,
@@ -80,16 +87,16 @@ export const styles = StyleSheet.create({
     fontWeight: "400",
     fontSize: 12,
     lineHeight: 16,
-    paddingLeft:24,
-    paddingTop:24,
-    color: textDarkGrey
+    paddingLeft: 24,
+    paddingTop: 24,
+    color: textDarkGrey,
   },
   detailText: {
     fontWeight: "400",
     fontSize: 12,
     lineHeight: 16,
     paddingTop: 4,
-    paddingLeft: 24
+    paddingLeft: 24,
   },
   price: {
     fontWeight: "700",
@@ -109,7 +116,7 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: "rgba(64, 191, 127, 0.1)",
     marginLeft: 70,
-    width: 60
+    width: 60,
   },
 
   lowInStock: {
@@ -120,8 +127,7 @@ export const styles = StyleSheet.create({
     width: 90,
     borderRadius: 5,
     backgroundColor: "rgba(255, 186, 51, 0.1)",
-    marginLeft: 38
-
+    marginLeft: 38,
   },
   lowInStockText: {
     color: textValidation,
@@ -140,23 +146,26 @@ export const styles = StyleSheet.create({
     color: textError,
   },
   emailText: {
-    fontWeight:'400',
+    fontWeight: "400",
     fontSize: 16,
-    lineHeight:20.8,
-    paddingLeft: 24
+    lineHeight: 20.8,
+    paddingLeft: 24,
   },
   floatingButtonView: {
-    paddingTop: '80%',
-    paddingLeft: 345
+    position: "absolute",
+    bottom: -300,
+    right: 0,
+    // paddingTop: '80%',
+    // paddingLeft: 345
   },
   floatingButton: {
     height: 45,
-    width: 45
+    width: 45,
   },
-  productOptionImage: { 
-    height: 20, 
+  productOptionImage: {
+    height: 20,
     width: 25,
-    position: 'absolute',
-    right: -25
-   },
+    position: "absolute",
+    right: -25,
+  },
 });

@@ -91,7 +91,7 @@ const App = () => {
       let lang = "English";
       // let token = await Helper.getData("homeToken");
       // let lang = await Helper.getData("language");
-      console.log("lang", lang);
+      // console.log("lang", lang);
       // dispatch({
       //   type: "SIGN_IN",
       //   payload: token,
@@ -146,7 +146,6 @@ const App = () => {
   };
 
   return (
-    
     <AuthContext.Provider value={authContext}>
       <Provider store={store}>
         <NavigationContainer>

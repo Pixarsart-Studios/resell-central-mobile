@@ -97,12 +97,17 @@ const Collection = (props) => {
           marginTop: 8,
         }}
       />
-      <View style={styles.floatingButtonView}>
+      <TouchableOpacity
+        onPress={() => {
+          props.navigation.navigate("CreateNewCollection");
+        }}
+        style={styles.floatingButtonView}
+      >
         <Image
           style={styles.floatingButton}
           source={require("../../Assets/Images/floatingButtonImage.png")}
         />
-      </View>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -168,8 +173,11 @@ const styles = StyleSheet.create({
   productsColumView: { flexDirection: "row", paddingRight: 14, paddingTop: 13 },
   productOptionImage: { height: 20, width: 25 },
   floatingButtonView: {
-    paddingTop: 485,
-    paddingLeft: 345,
+    position: "absolute",
+    bottom: -200,
+    right: 0,
+    // paddingTop: 485,
+    // paddingLeft: 345,
   },
   floatingButton: {
     height: 45,

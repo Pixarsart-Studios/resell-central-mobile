@@ -2,6 +2,7 @@ import {
   View,
   Text,
   Image,
+  TouchableOpacity,
   SafeAreaView,
   ScrollView,
   Modal,
@@ -10,7 +11,6 @@ import React, { useState } from "react";
 import MainHeader from "@/Components/MainHeader/MainHeader";
 import SearchBar from "@/Components/Searchbar";
 import { DummyData } from "../../../DummyData";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import Button from "@/Components/Button/Button";
 import Input from "@/Components/Input/Input";
 import { styles } from "./styles";
@@ -197,12 +197,17 @@ const Inventory = (props) => {
           </View>
         </Modal>
       </View>
-      <View style={styles.floatingButtonView}>
+      <TouchableOpacity
+        onPress={() => {
+          props.navigation.navigate("ProductDetails");
+        }}
+        style={styles.floatingButtonView}
+      >
         <Image
           style={styles.floatingButton}
           source={require("../../Assets/Images/floatingButtonImage.png")}
         />
-      </View>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };

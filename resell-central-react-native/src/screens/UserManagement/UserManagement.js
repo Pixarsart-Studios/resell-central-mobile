@@ -12,7 +12,7 @@ import AuthContext from "@/Config/AuthContext";
 import Button from "@/Components/Button/Button";
 import { styles } from "./styles";
 
-const UserManagement = () => {
+const UserManagement = (props) => {
   const { myState } = useContext(AuthContext);
   const { language } = myState;
 
@@ -78,7 +78,12 @@ const UserManagement = () => {
         <Text style={styles.descText}>
           {language?.storeOwnerHaveSomePermissionsThatCantBeAssignedToStaff}
         </Text>
-        <TouchableOpacity style={styles.addBtn}>
+        <TouchableOpacity
+          onPress={() => {
+            props.navigation.navigate("AddStaff");
+          }}
+          style={styles.addBtn}
+        >
           <Text style={styles.addBtnText}>{language?.add}</Text>
         </TouchableOpacity>
       </View>

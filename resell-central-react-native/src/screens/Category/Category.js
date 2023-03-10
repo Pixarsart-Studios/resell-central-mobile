@@ -1,4 +1,11 @@
-import { View, Text, Image, StyleSheet, SafeAreaView } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  StyleSheet,
+  SafeAreaView,
+} from "react-native";
 import React, { useState } from "react";
 import MainHeader from "@/Components/MainHeader/MainHeader";
 import SearchBar from "@/Components/Searchbar";
@@ -86,12 +93,17 @@ const Category = (props) => {
           marginTop: 8,
         }}
       />
-      <View style={styles.floatingButtonView}>
+      <TouchableOpacity
+        onPress={() => {
+          props.navigation.navigate("CreateCategory");
+        }}
+        style={styles.floatingButtonView}
+      >
         <Image
           style={styles.floatingButton}
           source={require("../../Assets/Images/floatingButtonImage.png")}
         />
-      </View>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -156,9 +168,13 @@ const styles = StyleSheet.create({
   categoryNameText: { paddingTop: 10, paddingLeft: 3 },
   productsColumView: { flexDirection: "row", paddingRight: 14, paddingTop: 13 },
   productOptionImage: { height: 20, width: 25 },
+
   floatingButtonView: {
-    paddingTop: 485,
-    paddingLeft: 345,
+    // paddingTop: 485,
+    // paddingLeft: 345,
+    position: "absolute",
+    bottom: -200,
+    right: 0,
   },
   floatingButton: {
     height: 45,

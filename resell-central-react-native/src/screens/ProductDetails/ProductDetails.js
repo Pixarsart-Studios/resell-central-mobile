@@ -10,7 +10,7 @@ import React, { useState } from "react";
 import MainHeader from "@/Components/MainHeader/MainHeader";
 import Button from "@/Components/Button/Button";
 import { mainBlue } from "@/Constants/Colors";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 
 const ProductDetails = () => {
   const categories = ["Description", "Organization"];
@@ -81,33 +81,41 @@ const ProductDetails = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <MainHeader back={"BACK"} heading="Product Details" />
-      <Image
-        resizeMode="contain"
-        source={require("../../Assets/Images/ProductImage.png")}
-        style={styles.image}
-      />
-      <View>
-        <Text style={{ paddingLeft: 24, paddingTop: 24 }}>Category</Text>
-        <View style={styles.productTitleRowView}>
-          <Text style={styles.textStyle}>Product Title</Text>
-          <Text style={styles.textStyle}>$260.00</Text>
+      <ScrollView>
+        <Image
+          resizeMode="contain"
+          source={require("../../Assets/Images/ProductImage.png")}
+          style={styles.image}
+        />
+        <View>
+          <Text style={{ paddingLeft: 24, paddingTop: 24 }}>Category</Text>
+          <View style={styles.productTitleRowView}>
+            <Text style={styles.textStyle}>Product Title</Text>
+            <Text style={styles.textStyle}>$260.00</Text>
+          </View>
+          <Text style={[styles.textStyle, { paddingLeft: 24 }]}>Features</Text>
+          <View
+            style={{ flexDirection: "row", paddingLeft: 24, paddingTop: 8 }}
+          >
+            <Text style={styles.featuresText}>.</Text>
+            <Text style={styles.featuresText}>Lorem Ipsum is simply dummy</Text>
+          </View>
+          <View
+            style={{ flexDirection: "row", paddingLeft: 24, paddingTop: 8 }}
+          >
+            <Text style={styles.featuresText}>.</Text>
+            <Text style={styles.featuresText}>Lorem Ipsum is simply dummy</Text>
+          </View>
+          <View
+            style={{ flexDirection: "row", paddingLeft: 24, paddingTop: 8 }}
+          >
+            <Text style={styles.featuresText}>.</Text>
+            <Text style={styles.featuresText}>Lorem Ipsum is simply dummy</Text>
+          </View>
+          <CategoryList />
+          <Button title="EDIT PRODUCT DETAIL" />
         </View>
-        <Text style={[styles.textStyle, { paddingLeft: 24 }]}>Features</Text>
-        <View style={{ flexDirection: "row", paddingLeft: 24, paddingTop: 8 }}>
-          <Text style={styles.featuresText}>.</Text>
-          <Text style={styles.featuresText}>Lorem Ipsum is simply dummy</Text>
-        </View>
-        <View style={{ flexDirection: "row", paddingLeft: 24, paddingTop: 8 }}>
-          <Text style={styles.featuresText}>.</Text>
-          <Text style={styles.featuresText}>Lorem Ipsum is simply dummy</Text>
-        </View>
-        <View style={{ flexDirection: "row", paddingLeft: 24, paddingTop: 8 }}>
-          <Text style={styles.featuresText}>.</Text>
-          <Text style={styles.featuresText}>Lorem Ipsum is simply dummy</Text>
-        </View>
-        <CategoryList />
-        <Button title="EDIT PRODUCT DETAIL" />
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

@@ -38,7 +38,8 @@ const InventoryAlerts = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <SafeAreaView>
-      <MainHeader
+      <Text>Coming soon</Text>
+      {/* <MainHeader
         onPress={() => props?.navigation?.goBack()}
         back={"BACK"}
         heading="Manage Orders"
@@ -170,7 +171,7 @@ const InventoryAlerts = (props) => {
             </View>
           </View>
         </Modal>
-      </View>
+      </View> */}
     </SafeAreaView>
   );
 };

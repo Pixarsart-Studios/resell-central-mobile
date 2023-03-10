@@ -12,6 +12,7 @@ import ForgotPasswordScreen from "@/screens/ForgotPasswordScreen/ForgotPasswordS
 import EnterOtpToResetPassword from "@/screens/EnterOtpToResetPassword/EnterOtpToResetPassword";
 import StoreInformation from "@/screens/StoreInformation/StoreInformation";
 import Dashboard from "@/screens/Dashboard/Dashboard";
+import { NavigationContainer } from "@react-navigation/native";
 
 const Stack = createStackNavigator();
 

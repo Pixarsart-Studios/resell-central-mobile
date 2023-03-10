@@ -34,7 +34,10 @@ const ManageReturns = (props) => {
             <View>
               <TouchableOpacity
                 key={index}
-                onPress={() => setCategoryIndex(index)}
+                onPress={() => {
+                  setCategoryIndex(index);
+                  props.navigation.navigate("ProductDetails");
+                }}
                 style={{ paddingLeft: 24 }}
               >
                 <View
@@ -85,7 +88,12 @@ const ManageReturns = (props) => {
 
       {ManageReturnsData.map((item, index) => {
         return (
-          <TouchableOpacity style={styles.item}>
+          <TouchableOpacity
+            onPress={() => {
+              props.navigation.navigate("ProductDetails");
+            }}
+            style={styles.item}
+          >
             <View style={styles.itemView}>
               <Image
                 style={styles.image}

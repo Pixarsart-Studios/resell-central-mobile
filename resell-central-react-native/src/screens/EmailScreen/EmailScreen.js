@@ -9,9 +9,9 @@ import {
 import React, { useContext, useState } from "react";
 import AuthContext from "@/Config/AuthContext";
 import MainHeader from "@/Components/MainHeader/MainHeader";
-import {styles} from './styles'
+import { styles } from "./styles";
 
-const EmailScreen = () => {
+const EmailScreen = (props) => {
   const { myState } = useContext(AuthContext);
   const { language } = myState;
   const [checked, setChecked] = useState(false);
@@ -125,27 +125,30 @@ const EmailScreen = () => {
                   >
                     {item.status}
                   </Text>
-                 
                 </View>
                 <Image
-            style={styles.productOptionImage}
-            resizeMode="contain"
-            source={require("../../Assets/Images/threeDots.png")}
-          />
+                  style={styles.productOptionImage}
+                  resizeMode="contain"
+                  source={require("../../Assets/Images/threeDots.png")}
+                />
               </View>
-
             </View>
             <View style={styles.line} />
           </TouchableOpacity>
         );
       })}
 
-
-<View style={styles.floatingButtonView}>
-          <Image 
+      <TouchableOpacity
+        onPress={() => {
+          props.navigation.navigate("CreateEmailTemplate");
+        }}
+        style={styles.floatingButtonView}
+      >
+        <Image
           style={styles.floatingButton}
-          source={require('../../Assets/Images/floatingButtonImage.png')}/>
-        </View>
+          source={require("../../Assets/Images/floatingButtonImage.png")}
+        />
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };

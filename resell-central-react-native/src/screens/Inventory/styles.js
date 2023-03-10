@@ -47,16 +47,17 @@ export const styles = StyleSheet.create({
     paddingTop: 24,
     paddingLeft: 24,
   },
-  checkBoxAndTextView: { 
-    flexDirection: "row", 
-    paddingLeft: "56%" 
+  checkBoxAndTextView: {
+    flexDirection: "row",
+    paddingLeft: "56%",
   },
   selectAllText: { padding: 6 },
   floatingButtonView: {
     zIndex: 3,
     elevation: 3,
     position: "absolute",
-    top: "82%",
+    // top: "82%",
+    bottom: 200,
     left: "80%",
     right: 0,
   },
@@ -220,7 +221,7 @@ export const styles = StyleSheet.create({
     // alignItems: 'center',
     // marginTop: 22,
     // height: '80%',
-    justifyContent: "flex-end"
+    justifyContent: "flex-end",
   },
   heading: {
     paddingLeft: 24,
