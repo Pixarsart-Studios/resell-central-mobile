@@ -1,12 +1,12 @@
 export default {
   en: {
     welcome: "we re localzed now",
-    resellCenteral: "Resell Centeral",
+    resellCenteral: "Resell  Centeral",
     seller: "Seller",
     loremIpsumolorSitConsecteturElit: "Lorem ipsum dolor sit consectetur elit.",
     email: "Email",
     password: "Password",
-    forgotPassword: "Forgot password",
+    forgotPassword: "Forgot Password",
     signIn: "SIGN IN",
     dontHaveAccount: "Don't have account.",
     signUp: "Sign Up",

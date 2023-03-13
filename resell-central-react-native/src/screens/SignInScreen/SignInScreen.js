@@ -1,11 +1,4 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  Image,
-  StatusBar,
-} from "react-native";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import React, { useContext, useState, useEffect } from "react";
 import Input from "@/Components/Input/Input";
 import Button from "@/Components/Button/Button";
@@ -19,18 +12,20 @@ import Helper from "@/Helper";
 import Loader from "@/Components/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { changeData } from "@/Store/Data";
+import Ionicons from "react-native-vector-icons/Ionicons";
 // Helper
 const SignInScreen = ({ props, navigation }) => {
   const { t } = useTranslation();
   const { signIn } = useContext(AuthContext);
   const { myState } = useContext(AuthContext);
   const dispatch = useDispatch();
-  const [email, setemail] = useState("azam@pixarsart.com");
-  const [password, setpassword] = useState("qwerty123");
+  const [email, setemail] = useState("");
+  const [password, setpassword] = useState("");
   const [errMsg, setErrMsgs] = useState("");
   const [passErrMsg, setpassErrMsg] = useState("");
   const [loading, setLoading] = useState(false);
   const { language } = myState;
+  const [hidePass, setHidePass] = useState(true);
 
   const resetForm = () => {
     setemail("");
@@ -160,7 +155,6 @@ const SignInScreen = ({ props, navigation }) => {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={"#FFFFFF"} />
       <View style={styles.childContainer}>
         <View style={styles.logoContainer}>
           <Image
@@ -173,7 +167,6 @@ const SignInScreen = ({ props, navigation }) => {
           <Text style={styles.headingText}>{language?.resellCenteral}</Text>
           <Text style={styles.headingText}>{language?.seller}</Text>
         </View>
-        {/* <Text style={{color:'red',height:40,width:'100%'}} >{language?.welcome}</Text> */}
         <View style={styles.descContainer}>
           <Text style={styles.descText}>
             {language?.loremIpsumolorSitConsecteturElit}
@@ -186,13 +179,11 @@ const SignInScreen = ({ props, navigation }) => {
           <Input
             value={email}
             onChangeText={(val) => setemail(val)}
-            placeholder={"Enter email"}
             style={styles.input}
+            autoCapitalize={false}
           />
           {errMsg != "" && (
-            <Text style={{ color: "red", alignSelf: "flex-end" }}>
-              {errMsg}
-            </Text>
+            <Text style={styles.emailRequiredText}>{errMsg}</Text>
           )}
           <View style={styles.passwordLabel}>
             <Text style={styles.passwordLabelText}>{language?.password}</Text>
@@ -200,13 +191,19 @@ const SignInScreen = ({ props, navigation }) => {
           <Input
             value={password}
             onChangeText={(val) => setpassword(val)}
-            placeholder={"Enter Password"}
-            style={styles.input}
+            style={styles.passwordInput}
+            secureTextEntry={hidePass ? true : false}
+            autoCapitaliz={false}
           />
+          <Ionicons
+            size={24}
+            style={styles.eyeIcon}
+            name={hidePass ? "md-eye-off-sharp" : "md-eye-outline"}
+            onPress={() => setHidePass(!hidePass)}
+          />
+
           {passErrMsg != "" && (
-            <Text style={{ color: "red", alignSelf: "flex-end" }}>
-              {passErrMsg}
-            </Text>
+            <Text style={styles.passwordRequiredText}>{passErrMsg}</Text>
           )}
         </View>
         <TouchableOpacity
@@ -246,8 +243,11 @@ const SignInScreen = ({ props, navigation }) => {
             />
           </View>
         </View>
-        <View style={styles.bottomLogoView}>
-          <Image source={require("../../Assets/Images/Ellipse.png")} />
+        <View style={{ flex: 1, justifyContent: 'flex-end'}}>
+          <Image
+            style={styles.ellipse}
+            source={require("../../Assets/Images/Ellipse.png")}
+          />
         </View>
       </View>
       {loading && <Loader text={"Signing In"} />}

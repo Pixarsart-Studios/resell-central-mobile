@@ -9,6 +9,8 @@ const Input = ({
   value,
   placeholder,
   onChangeText,
+  secureTextEntry,
+  autoCapitalize
 }) => {
   // console.log(props, 'props', placeholder);
   return (
@@ -19,6 +21,8 @@ const Input = ({
         value={value}
         onChangeText={onChangeText}
         style={[style, {paddingLeft: 18}]}
+        secureTextEntry={secureTextEntry}
+        autoCapitalize={autoCapitalize}
         />
     </View>
   );
@@ -27,6 +31,7 @@ const Input = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+
   },
 });
 

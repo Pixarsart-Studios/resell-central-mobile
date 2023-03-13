@@ -11,6 +11,8 @@ import AuthContext from "./src/Config/AuthContext";
 import { useReducer } from "react";
 import Languages from "./src/Translations/resources/en";
 import AuthStack from "@/Navigators/Application";
+import MyStatusBar from "@/Components/MyStatusBar/MyStatusBar";
+import { bgWhite } from "@/Constants/Colors";
 // import  from '@react-native-async-storage/async-storage/jest/async-storage-mock'
 
 const reducer = (prevState, action) => {
@@ -150,6 +152,10 @@ const App = () => {
       <Provider store={store}>
         <NavigationContainer>
           <PersistGate loading={null} persistor={persistor}>
+          <MyStatusBar
+            backgroundColor={bgWhite}
+            barStyle="dark-content"
+          />
             <Root />
           </PersistGate>
         </NavigationContainer>
