@@ -41,7 +41,7 @@ const ForgotPasswordScreen = ({ props, navigation }) => {
         <View style={styles.buttonContainer}>
           <Button
             title={"RESET PASSWORD"}
-            // onPress={() => navigation.navigate("EnterOtpToResetPassword")}
+            onPress={() => navigation.navigate("EnterOtpToResetPassword")}
           />
         </View>
         <View style={styles.notAccountContainer}>

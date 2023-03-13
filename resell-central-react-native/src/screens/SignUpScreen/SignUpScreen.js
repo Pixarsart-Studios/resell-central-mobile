@@ -121,9 +121,7 @@ const SignUpScreen = ({ navigation }) => {
         // let sendParams = { email: values?.email, id, token };
         reset();
         setLoading(false);
-        navigation?.goBack();
-        // dispatch(allActions.DataAction.AppLoader(false));
-        // navigation.navigate("confirm", { values: appendVal });
+        // navigation?.goBack();
       } else {
         // dispatch(allActions.DataAction.AppLoader(false));
         const {
@@ -169,7 +167,8 @@ const SignUpScreen = ({ navigation }) => {
               Alert.alert("", "Please agree to the terms and conditions!");
             } else {
               console.log(values);
-              handleConfirm(values, resetForm);
+              navigation.navigate("OtpScreen");
+              // handleConfirm(values, resetForm);
               // registerWithEmailAndPassword(values, resetForm);
             }
           }}

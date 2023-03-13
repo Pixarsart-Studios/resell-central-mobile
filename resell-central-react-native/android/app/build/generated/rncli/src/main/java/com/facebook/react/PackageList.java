@@ -31,6 +31,8 @@ import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 // react-native-localization
 import com.babisoft.ReactNativeLocalization.ReactNativeLocalizationPackage;
+// react-native-pager-view
+import com.reactnativepagerview.PagerViewPackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-safe-area-context
@@ -96,6 +98,7 @@ public class PackageList {
       new RNGestureHandlerPackage(),
       new LinearGradientPackage(),
       new ReactNativeLocalizationPackage(),
+      new PagerViewPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),

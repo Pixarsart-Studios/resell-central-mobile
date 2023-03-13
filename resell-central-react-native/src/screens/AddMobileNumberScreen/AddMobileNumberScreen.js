@@ -53,7 +53,7 @@ const AddMobileNumberScreen = ({ navigation }) => {
         <View style={styles.buttonContainer}>
           <Button
             title={language?.ADDMOBILENUMBER}
-            onPress={() => navigation.navigate("EnterOtpToResetPassword")}
+            onPress={() => navigation.navigate("AgainOtpScreen")}
           />
         </View>
         <View style={styles.bottomLogoView}>

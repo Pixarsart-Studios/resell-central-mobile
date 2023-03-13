@@ -71,7 +71,7 @@ const EnterOtpAgainScreen = ({ navigation }) => {
         <View style={styles.buttonContainer}>
           <Button
             title={"CREATE YOUR SELLER ACCOUNT"}
-            onPress={() => navigation.navigate("ForgotPasswordScreen")}
+            onPress={() => navigation.navigate("StoreInformation")}
           />
         </View>
         <View style={styles.notAccountContainer}>
