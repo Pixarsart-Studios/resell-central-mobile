@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View, Image } from "react-native";
 import { Icon } from "react-native-vector-icons/Icon";
 import styles from "./styles";
 
@@ -18,6 +18,7 @@ const MainHeader = memo(
       <View style={[styles.container, { ...containerStyle }]}>
         {back ? (
           <TouchableOpacity onPress={onPress} style={styles.leftViewStyle}>
+          <Image style={styles.backArrow} source={require('../../Assets/Images/backArrow.png')} />
             <Text style={styles.back}>{back}</Text>
           </TouchableOpacity>
         ) : null}

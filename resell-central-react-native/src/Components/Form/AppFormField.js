@@ -5,6 +5,7 @@ import { Formik, Field } from "formik";
 const AppFormField = (props) => {
   const {
     placeholder,
+    icon,
     field: { name, onBlur, onChange, value, style },
     form: { errors, touched, setFieldTouched },
     ...inputProps
@@ -25,6 +26,7 @@ const AppFormField = (props) => {
         value={value}
         style={style}
         {...inputProps}
+        icon={icon}
       />
       {hasError && <Text style={{ color: "red" }}>{errors[name]}</Text>}
     </>

@@ -1,7 +1,7 @@
 import { mainBlue, strokeWhite } from '@/Constants/Colors';
 import { proximaNovaRegular } from '@/Constants/Fonts';
 import {StyleSheet} from 'react-native';
-import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const styles = StyleSheet.create({
   container: {
@@ -19,9 +19,10 @@ const styles = StyleSheet.create({
   },
   leftViewStyle: {
     flex: 0.8,
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-    
+    // justifyContent: 'center',
+    // alignItems: 'flex-start',
+    flexDirection: 'row',
+
   },
   middleViewStyle: {
     // flex: 1.4,
@@ -54,8 +55,19 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   back: {
-    color: mainBlue
-  }
+    color: mainBlue,
+    fontSize: 16,
+    fontWeight: '600',
+    lineHeight: 19.49,
+    paddingLeft: 9.5,
+  },
+  backArrow: {
+    height: 8,
+    width: 4,
+    paddingTop: hp('2.1%'),
+    marginLeft: hp('.5%'),
+    resizeMode: 'contain',
+  },
 });
 
 export default styles;

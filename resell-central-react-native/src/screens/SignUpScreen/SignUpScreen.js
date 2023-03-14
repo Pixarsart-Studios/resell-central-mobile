@@ -18,7 +18,6 @@ import { styles } from "./styles";
 import Env from "../../../api/Env";
 import auth from "@react-native-firebase/auth";
 import MindAxios from "../../../api/MindAxios";
-import CheckBox from "@react-native-community/checkbox";
 import { useFormikContext } from "formik";
 import {
   widthPercentageToDP as wp,
@@ -28,6 +27,10 @@ import AuthContext from "@/Config/AuthContext";
 import MainHeader from "@/Components/MainHeader/MainHeader";
 import Loader from "@/Components/Loader/Loader";
 import Helper from "@/Helper";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import CustomCheckBox from "@/Components/CustomCheckBox/CustomCheckBox";
+import { bgBlack, bgLightGrey, mainBlue } from "@/Constants/Colors";
+
 
 export const validationSchema = Yup.object({}).shape({
   firstName: Yup.string().required("First name is required").label("FirstName"),
@@ -55,7 +58,9 @@ const SignUpScreen = ({ navigation }) => {
   const [agree, setAgree] = useState(true);
   const [loading, setLoading] = useState(false);
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
-
+  const [hidePass, setHidePass] = useState(true);
+  const [hideConfirmPass, setHideConfirmPass] = useState(true)
+  const [checkBox, setCheckBox] = useState(false)
   const handleConfirm = async (values, reset) => {
     // dispatch(allActions.DataAction.AppLoader(true));
     setLoading(true);
@@ -145,7 +150,6 @@ const SignUpScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={"#FFFFFF"} />
       <MainHeader onPress={() => navigation?.goBack()} back={language?.back} />
       <View style={[styles.logoContainer, { paddingBottom: 30 }]}>
         <Image
@@ -228,31 +232,49 @@ const SignUpScreen = ({ navigation }) => {
             <View style={styles.labelView}>
               <Text style={styles.labelText}>{language?.password}</Text>
             </View>
-            <Field
-              style={styles.input}
-              component={AppFormField}
-              name="password"
-              secureTextEntry
-              textContentType="password"
-            />
+            <View style={{ justifyContent: "center" }}>
+              <Field
+                style={styles.passwordInput}
+                component={AppFormField}
+                name="password"
+                secureTextEntry={hidePass ? true : false}
+                textContentType="password"
+              />
+              <Ionicons
+                size={24}
+                style={styles.eyeIcon}
+                name={hidePass ? "md-eye-off-sharp" : "md-eye-outline"}
+                onPress={() => setHidePass(!hidePass)}
+              />
+            </View>
             <View style={styles.labelView}>
               <Text style={styles.labelText}>{language?.confirmPassword}</Text>
             </View>
-            <Field
-              style={styles.input}
-              component={AppFormField}
-              name="confirmPassword"
-              secureTextEntry
-              textContentType="password"
-            />
+            <View style={{ justifyContent: "center",  }}>
+              <Field
+                style={styles.passwordInput}
+                component={AppFormField}
+                name="confirmPassword"
+                secureTextEntry={hideConfirmPass ? true : false}
+                autoCapitaliz={false}
+                textContentType="password"
+              />
+              <Ionicons
+                size={24}
+                style={styles.eyeIcon}
+                name={hideConfirmPass ? "md-eye-off-sharp" : "md-eye-outline"}
+                onPress={() => setHideConfirmPass(!hideConfirmPass)}
+              />
+            </View>
           </View>
-          {/* <View style={{ height: 40, backgroundColor: "red" }} /> */}
           <View style={styles.termsAndConditionsAndButtonView}>
             <View style={styles.checkboxContainer}>
               <View style={styles.optionStyle}>
-                <TouchableOpacity style={[styles.radio]}>
-                  <View style={styles.innerRedio} />
-                </TouchableOpacity>
+                <CustomCheckBox
+                onPress={() => setCheckBox(!checkBox)}
+                isChecked={checkBox}
+                color={checkBox? mainBlue : bgLightGrey}
+              />
               </View>
               <Text style={styles.text}>{language?.iAgreeTo}</Text>
               <Text style={styles.tACPPText}>
@@ -270,7 +292,12 @@ const SignUpScreen = ({ navigation }) => {
           <Text style={styles.alreadyHaveAccountText}>
             {language?.alreadyHaveAnAccount}
           </Text>
-          <Text style={styles.signInText}>{language?.signInSmall}</Text>
+          <Text
+            onPress={() => navigation.goBack("Signin")}
+            style={styles.signInText}
+          >
+            {language?.signInSmall}
+          </Text>
         </View>
         <View style={styles.signinwithConatiner}>
           <Text style={styles.signInWithText}>{language?.orSignInWith}</Text>
@@ -285,11 +312,14 @@ const SignUpScreen = ({ navigation }) => {
             />
           </View>
         </View>
+        <View style={styles.ellipseView}>
+          <Image
+            style={styles.ellipse}
+            source={require("../../Assets/Images/Ellipse.png")}
+          />
+        </View>
       </ScrollView>
-      <Image
-        style={styles.ellipse}
-        source={require("../../Assets/Images/Ellipse.png")}
-      />
+
       {loading && <Loader text={"Signing up"} />}
     </View>
   );

@@ -57,11 +57,11 @@ export const styles = StyleSheet.create({
   labelContainer: {
     backgroundColor: strokeWhite,
     alignSelf: "flex-start",
-    marginStart: "8.2%",
+    marginStart: hp("4%"),
     zIndex: 1,
     elevation: 1,
     shadowColor: bgWhite,
-    top: hp("3.5%"),
+    top: hp("3.2%"),
   },
   emailLabel: {
     fontWeight: "400",
@@ -70,7 +70,7 @@ export const styles = StyleSheet.create({
     color: textDarkGrey,
     fontFamily: "ProximaNova-Regular",
     width: 53,
-    paddingLeft: 10,
+    paddingLeft: hp('1%'),
   },
   inputContainer: {
     height: hp("20%"),
@@ -92,7 +92,7 @@ export const styles = StyleSheet.create({
     zIndex: 1,
     elevation: 1,
     shadowColor: bgWhite,
-    top: hp("2.5%"),
+    top: hp("2%"),
   },
   passwordLabelText: {
     fontWeight: "400",

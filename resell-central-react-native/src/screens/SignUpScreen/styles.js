@@ -22,17 +22,16 @@ import {
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffff",
+    backgroundColor: bgWhite,
   },
   childContainer: {
     height: hp("100%"),
-    width: wp("100%"),
     backgroundColor: bgWhite,
   },
   logoContainer: {
     justifyContent: "center",
     alignItems: "center",
-    height: "1.5%",
+    height: hp("1.5%"),
   },
   logo: {
     height: hp("17%"),
@@ -63,11 +62,11 @@ export const styles = StyleSheet.create({
   labelContainer: {
     backgroundColor: strokeWhite,
     alignSelf: "flex-start",
-    marginStart: "9%",
+    marginStart: 40,
     zIndex: 1,
     elevation: 1,
     shadowColor: bgWhite,
-    top: "4.8%",
+    top: "2.8%",
   },
   firstNameLabel: {
     fontWeight: "400",
@@ -82,7 +81,7 @@ export const styles = StyleSheet.create({
     zIndex: 1,
     elevation: 1,
     shadowColor: bgWhite,
-    top: "8.5%",
+    top: "2.9%",
   },
   labelText: {
     fontWeight: "400",
@@ -91,21 +90,23 @@ export const styles = StyleSheet.create({
     color: textDarkGrey,
   },
   inputContainer: {
-    height: hp("17%"),
+    // height: hp("17%"),
     paddingLeft: 24,
     paddingRight: 24,
-    paddingTop: 35,
-    marginBottom: hp(10),
+    paddingTop: 16,
+    // marginBottom: hp(10),
   },
   input: {
     borderWidth: 1,
     borderRadius: 5,
     borderColor: strokeGray,
-    height: 50,
-    paddingLeft: 10,
+    height: 48,
+    marginVertical: 7,
+    paddingLeft: 13,
+    // color: textDarkGrey,
   },
   termsAndConditionsAndButtonView: {
-    marginTop: hp(25),
+    // marginTop: hp(25),
   },
   tACPPText: {
     color: secondaryBlue,
@@ -118,7 +119,7 @@ export const styles = StyleSheet.create({
   },
   checkboxContainer: {
     flexDirection: "row",
-    paddingTop: 16,
+    // paddingTop: 16,
     paddingLeft: 24,
   },
   text: {
@@ -179,11 +180,12 @@ export const styles = StyleSheet.create({
     borderWidth: 1.5,
     alignItems: "center",
     justifyContent: "center",
-    borderColor: bgLightGrey,
+    backgroundColor: 'red'
+    // borderColor: bgLightGrey,
   },
   innerRedio: {
-    height: 22,
-    width: 22,
+    height: 18,
+    width: 18,
     borderRadius: 3,
     backgroundColor: bgLightGrey,
   },
@@ -192,5 +194,27 @@ export const styles = StyleSheet.create({
     paddingTop: 19,
     // alignItems: "center",
   },
-  ellipse: {},
+  ellipseView: {
+    flex: 1,
+    justifyContent: "flex-end",
+  },
+  ellipse: {
+    height: hp("7.2%"),
+    width: hp("11%"),
+    resizeMode: "contain",
+  },
+  eyeIcon: {
+    position: "absolute",
+    right: hp("1%"),
+    top: hp('2.4%'),
+    color: bgLightGrey,
+  },
+  passwordInput: {
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: strokeGray,
+    height: 48,
+    color: textDarkGrey,
+    marginTop: hp('1%'),
+  },
 });
